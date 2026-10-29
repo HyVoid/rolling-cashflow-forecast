@@ -1,243 +1,289 @@
 [ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
-# Prevent Cash Shortfalls Before They Reach the Payment Date
+
+# 16-Week Rolling Cash Flow Forecast Excel Template: Direct-Method Liquidity Planner, PO Commitment Tracker & Working Capital Model
 
 <div align="center">
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Microsoft%20Excel-217346)
-![Focus](https://img.shields.io/badge/focus-Operations--Stage%20Business-orange)
+![Focus](https://img.shields.io/badge/focus-Working%20Capital%20%26%20Treasury-orange)
 
-**Designed for consumer goods, wholesale, and manufacturing businesses that need to track committed cash movements, pre-payment obligations, and rolling liquidity before a shortfall occurs.**
+**A direct-method 16-week rolling cash flow forecast spreadsheet built in Microsoft Excel for wholesale, import/export, e-commerce inventory, and manufacturing businesses managing open purchase orders (POs), supplier prepayments, customer deposits, and short-term working capital.**
 
-[Live Preview](https://hyvoid.github.io/rolling-cashflow-forecast/) · [Purchase Complete Excel](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+[Launch Interactive 16-Week Rolling Cash Flow Simulator Demo](https://hyvoid.github.io/rolling-cashflow-forecast/) · [Download the Complete 16-Week Rolling Cash Flow Excel Workbook](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
 
 </div>
 
-Track open order cash commitments, detect liquidity gaps weeks in advance, and maintain a single forward-looking source of truth for short-term cash viability.
+**16-Week Rolling Cash Flow Forecast Workbook** is an automated **Microsoft Excel short-term liquidity planner** and **open commitment cash tracker**. Extending beyond standard **13-week cash flow models** to cover full 110-day inventory and production lead times, it consolidates **Accounts Receivable (AR)**, **Accounts Payable (AP)**, **unbilled Sales Orders (SO)**, and **committed Purchase Orders (PO)** into a single weekly cash timeline—flagging working capital shortfalls and minimum cash buffer breaches weeks before payment due dates.
 
 ---
 
-## Quick Preview
+## Visual Preview: 16-Week Cash Timeline & Threshold Alert Dashboard
 
-<img width="1672" height="941" alt="ChatGPT Image May 25, 2026, 03_53_03 PM" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
+<img width="1672" height="941" alt="16-Week Rolling Cash Flow Forecast Excel Template showing weekly cash inflows, supplier PO prepayments, net liquidity balance, and shortfall alerts" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
 
-> View the interactive workbook preview: [16-week cash flow demo](https://hyvoid.github.io/rolling-cashflow-forecast/)
+> Test the weekly commitment mapping and liquidity threshold alerts in your browser: [Interactive 16-Week Direct-Method Cash Flow Forecast Demo](https://hyvoid.github.io/rolling-cashflow-forecast/)
 
 ---
 
-## Why This Exists
+## Why Accrual Accounting Fails to Prevent Short-Term Cash Shortfalls
 
-Most cash shortfalls in growing businesses are not caused by unprofitable operations.
+Profitable wholesale, manufacturing, and physical product businesses routinely experience acute liquidity crunches during growth phases. These cash shortfalls happen because **customer deposits**, **milestone progress billings**, **contracted supplier prepayments**, and **staggered Net 30/60/90 payment terms** occur weeks before an accounting invoice is ever posted to the general ledger.
 
-They usually happen because customer pre-payments, milestone receipts, committed purchase orders, and staggered payment terms are difficult to consolidate manually — and standard accounting records are structurally blind to them until an invoice is raised.
+**The Reactive Bank-Balance & AR/AP Workflow (High Default Risk):**
 
-The risk is simple:
+```text
+Supplier wire due date arrives
+-> Finance checks current bank balance and billed AP aging
+-> Unbilled PO prepayments and freight commitments overlooked
+-> Working capital shortfall discovered 48 hours before wire deadline
 
 ```
-Payment due date arrives
--> Manual bank balance check
--> Prior commitments missed
--> Shortfall discovered at the wire
+
+**The Proactive 16-Week Commitment Forecasting Workflow (Pre-Decision Control):**
+
+```text
+New customer order or supplier Purchase Order (PO) proposed
+-> Prepayment and balance milestones logged once in the commitment ledger
+-> 16-week rolling cash flow timeline updates automatically
+-> Liquidity gap and minimum buffer breach flagged 6–12 weeks in advance
+
 ```
 
-This workbook is designed to change the workflow:
-
-```
-New order or supplier PO considered
--> Commitment entered once
--> 16-week cash timeline updated automatically
--> Liquidity gap flagged before it becomes a crisis
-```
-
-The commercial problem is not only cash management. It is operational visibility. Finance teams and operators need to know whether the business can cover its next obligation — before agreeing to payment terms.
+Finance managers, controllers, and operations leads need pre-decision liquidity visibility. Before signing a supplier purchase order or granting Net 60 terms to a wholesale buyer, operators must verify that the weekly cash trough remains above the company's minimum operating cash reserve.
 
 ---
 
-## Three Cash Traps That Catch Growing Businesses
+## The Business Logic & Methodology: Direct-Method Commitment Forecasting
 
-### Trap 1 — Monthly statements misread as a liquidity picture
+This workbook solves the **pre-invoice working capital blindness problem** by combining **Direct-Method Rolling Cash Flow Forecasting** with **Order-to-Invoice Commitment Deduplication**.
 
-Standard AR/AP reports reflect what has been invoiced. They do not reflect what has been committed.
+### The Commercial Problem: The Accrual-to-Cash Timing Gap in Physical Supply Chains
 
-A business holding $80,000 in confirmed customer deposits and $60,000 in contracted supplier prepayments due next month shows neither on its income statement until goods move and invoices are raised. The finance team sees a healthy bank balance today. The coming shortfall is invisible.
+Standard accounting software (QuickBooks, Xero, NetSuite GL) recognizes financial events only when an **Invoice** or **Bill** is issued. However, in manufacturing, wholesale distribution, and import operations, cash is legally committed at the **Order Layer**:
 
-Finance teams who manage cash from monthly statements routinely work from a picture that is structurally four to six weeks behind reality. The mental model feels complete; the data is not.
+1. **Procurement Cash Outflows:** A factory requires a 30% deposit upon Purchase Order (PO) issuance and a 70% balance upon Bill of Lading (B/L) or warehouse arrival—weeks before a formal AP vendor bill is booked.
+2. **Sales Cash Inflows:** A B2B customer pays a 25% deposit upon Sales Order (SO) confirmation and the remaining 75% either before shipment or on Net 30/60 terms after delivery.
+3. **Why 16 Weeks Beats Standard 13-Week Models:** A standard corporate 13-week (90-day) cash forecast cuts off right before a 60-day production run plus 30-day ocean transit plus Net 30 customer collection clears. Expanding the rolling window to **16 weeks (112 days)** captures the entire cash conversion cycle from initial PO deposit to final customer collection.
 
-### Trap 2 — Pre-payments and purchase orders tracked in separate systems
+### The Core Methodology: Three-Stage Deterministic Cash Mapping
 
-When the same business takes a 30% customer deposit on Monday and issues a 40% supplier prepayment on Thursday, both transactions affect the same cash pool — but they typically live in different systems, different spreadsheets, or different teams.
+Instead of projecting cash from top-line P&L averages, the workbook executes a deterministic three-stage calculation across a sliding 16-week window ($t \in [1, 16]$):
 
-Operations that maintain separate tracking for sales commitments and procurement obligations — a natural workflow division — systematically fail to see the net cash position. The regulation does not recognise that operational boundary. Neither does the bank account.
+1. **Commitment-to-Invoice Deduplication Engine:**
 
-### Trap 3 — Gaps discovered at the payment due date
+$$\text{Active Cash Events} = \{ \text{Billed AR} \} \cup \{ \text{Billed AP} \} \cup \{ \text{Open SOs} \setminus \text{Invoiced SOs} \} \cup \{ \text{Open POs} \setminus \text{Billed POs} \}$$
 
-Manual verification typically happens when a payment falls due or when someone checks the bank account. By the time a gap is identified, the window for action has closed. Reactive responses — emergency credit draws, supplier renegotiations, delayed payroll — carry real cost and real relationship damage.
 
-Pre-gap interception requires that liquidity risk be visible weeks before the obligation matures — which requires all open commitments to be current and all timing calculations to run automatically at the point of planning.
 
-The gap is usually hidden in the relationship between:
+*Business Effect:* Once a Purchase Order converts into a formal vendor invoice in your accounting system, the deduplication flag excludes the original PO line so the cash outflow is never double-counted.
+2. **Milestone Date-Offset Translation:**
+Every active commitment is decomposed into discrete cash tranches (e.g., Deposit Tranche + Balance Tranche) mapped to target calendar weeks based on operational trigger dates (Order Date, Estimated Shipment Date, Estimated Arrival Date, or Invoice Date) plus contracted payment terms ($\Delta \text{Days}$).
+3. **Rolling Weekly Liquidity & Buffer Breach Evaluation:**
 
-- opening cash balance
-- deposit and pre-payment receipt timing
-- customer balance receipt dates
-- supplier payment due dates
-- contract payment terms
-- order volume and growth rate
+$$\text{Ending Cash}_{w} = \text{Opening Cash}_{w} + \sum \text{Committed Inflows}_{w} - \sum \text{Committed Outflows}_{w}$$
 
-That is why manual reconciliation often surfaces the issue late, or misses it entirely.
 
----
+$$\text{Liquidity Variance}_{w} = \text{Ending Cash}_{w} - \text{Minimum Safe Cash Threshold}$$
 
-## Who This Tool Is For
 
-| User | Practical Use Case |
-|---|---|
-| Finance managers | Identify liquidity gaps 6–16 weeks out before they become crises |
-| Operations managers | Understand the cash impact of a new order or supplier PO before committing |
-| Founders and CEOs | Maintain a single forward view of cash viability as the business scales |
-| Procurement teams | Evaluate prepayment demands against actual available liquidity |
-| External accountants | Provide short-term cash advisory without building a model from scratch |
 
-Best suited for businesses running mixed customer pre-payment and supplier prepayment structures, where treasury software is cost-prohibitive but manual approaches no longer scale.
+*Business Effect:* Any week where $\text{Ending Cash}_{w} < \text{Minimum Safe Cash Threshold}$ triggers an immediate visual alert and isolates the exact PO or delayed AR line item causing the working capital trough.
 
 ---
 
-## What The Workbook Does
+## Three Working Capital Traps in Manual Cash Flow Spreadsheets
 
-### Open Commitment Logging
-A single data entry point for all AR, AP, open sales orders, and open purchase orders. Teams enter basic commitment and timing information once; cash timeline calculations run automatically in the background.
+### Trap 1: Relying on Monthly P&L and Billed AR/AP Aging Reports for Liquidity
 
-### 16-Week Cash Timeline
-Automatic mapping of every open commitment to a specific week and cash direction. The rolling window updates each week as new entries are added and prior weeks close out.
+Standard Accounts Receivable and Accounts Payable aging reports only display **invoiced transactions**.
 
-### Pre-Decision Liquidity Status
-Each week's projected cash balance is visible before a new order is accepted or a new supplier term is agreed. No manual cross-referencing. No day-of-payment discovery.
+Consider an importer holding $80,000 in unbilled customer order deposits and facing $60,000 in contracted factory balance payments upon container arrival next month. Neither obligation appears on the P&L or standard AP aging report until inventory lands and vendor bills are entered. Managing weekly treasury from monthly accrual statements leaves the finance team four to six weeks behind real cash commitments.
 
-### Deduplication Logic
-Purchase orders already converted to invoices are automatically identified and excluded — ensuring each expected cash movement is counted exactly once and the open-commitment view stays clean.
+### Trap 2: Siloed Tracking Between Sales Orders (CRM) and Purchase Orders (Procurement)
 
-### Threshold Alert Layer
-A minimum safe cash balance is configured by the business. The model highlights which weeks breach the threshold and which specific transactions drive each gap — giving teams a transaction-level diagnostic, not just a red flag.
+When the sales team accepts a 30% customer deposit on Monday and the purchasing team commits to a 40% supplier prepayment on Thursday, both actions draw from the same operating bank account. Yet in most SMEs, sales commitments live in a CRM or order sheet while supplier POs live in a separate procurement tracker.
 
-### Audit-Ready Structure
-Every entry is structured and traceable from day one. The full 16-week commitment record can be filtered by direction, counterparty, or week and reviewed without post-processing.
+Maintaining disconnected spreadsheets for customer inflows and supplier outflows prevents operators from seeing the **net weekly cash position** when fulfillment dates slip by even one week.
 
----
+### Trap 3: Intra-Month Cash Troughs Hidden Inside Positive Monthly Totals
 
-## Example Scenario
+A monthly cash flow summary can show a healthy positive net cash balance at month-end while hiding a fatal multi-day overdraft in Week 2 or Week 3.
 
-**Business profile:** Consumer goods importer. Mixed customer pre-payment terms and supplier prepayment requirements. Single finance function.
+Weekly cash shortfalls emerge from the timing mismatch between six operational variables:
 
-**The problem:** Each week, the finance manager manually cross-references open sales orders, outstanding customer deposits, pending supplier invoices, and expected goods arrival dates to estimate available cash. Customer commitments are tracked in the CRM. Supplier commitments are tracked in the procurement sheet. Reconciling both into a net cash position takes two hours and produces a view that is already a week stale.
+* Opening operating bank balance
+* Customer deposit and milestone receipt dates
+* Final customer balance collection terms (e.g., Prior to Shipment vs. Net 30)
+* Supplier PO prepayment and goods-on-arrival wire dates
+* Freight, duty, and customs clearance outlays
+* Order volume acceleration during peak seasonal builds
 
-Over one quarter of operations, two liquidity gaps were identified — both within 48 hours of the payment due date.
-
-| | Before | After |
-|---|---|---|
-| Commitment structure | Two separate sheets, one per team | Single unified workbook |
-| Weekly cash check time | ~2 hours across all open positions | Under 5 minutes per week |
-| Pre-payment consolidation | Manual cross-reference | Automatic across AR, AP, sales orders, POs |
-| Gap discovery | At payment due date; reactive response | 6–8 weeks out; planned response |
-
-**The specific inflection point this tool surfaces:**
-
-A $100,000 customer order carries a 70% balance due before shipment, estimated week 6. The related supplier PO carries a 60% balance due on goods arrival, estimated week 5. Opening cash balance: $10,000.
-
-Week 5 net position: $10,000 − $30,000 = **−$20,000.** Gap exists.
-Week 6 net position: −$20,000 + $70,000 = **$50,000.** Resolved.
-
-A monthly view shows the month net-positive. The weekly window shows a real $20,000 shortfall in week 5 that requires action before it arrives — not after.
+Mapping every commitment to a specific 7-day bucket exposes intra-month cash troughs while you still have 6 to 10 weeks to negotiate supplier terms, accelerate customer collections, or draw on a revolving line of credit.
 
 ---
 
-## Why Short-Term Cash Forecasting Works This Way
+## Who This 16-Week Rolling Cash Flow Excel Template Is For
 
-Rolling cash flow forecasting — direct method, short forward horizon — is a standard treasury discipline maintained by most large corporations as a core operational function. In larger businesses, it is managed by dedicated treasury functions using specialist software.
+Designed for operational finance teams and business owners who need **direct-method treasury forecasting inside Microsoft Excel** without enterprise TMS software costs:
 
-The direct method works by mapping actual expected cash movements — not accounting entries — to specific dates. Every committed inflow and outflow is translated to a week, a direction, and an amount. The running balance at any point reflects what the business actually expects to hold, not what its accounting records show.
-
-This approach is structurally distinct from:
-
-- **P&L-based cash estimation** — conflates profitability with liquidity; a business can be profitable and illiquid simultaneously
-- **Bank balance management** — only reflects what has already moved; committed future outflows are invisible
-- **Monthly AR/AP reporting** — excludes pre-invoice commitments entirely; systematically blind to the operational layer
-
-The reason most growing businesses lack this view is not complexity. It is the absence of a structured mechanism to consolidate operational commitments — which live across sales, procurement, and finance — into a single cash timeline.
-
-Useful reference context:
-- [AICPA: Direct Method Cash Flow Forecasting](https://www.aicpa.org)
-- [AFP: Treasury Management Fundamentals](https://www.afponline.org)
+| Role & Search Persona | Specific Operational Scenario & Template Use Case |
+| --- | --- |
+| **Finance Managers & Controllers** *(16-Week / 13-Week Cash Flow Forecast Excel Template)* | Replace manual Friday bank reconciliations with a rolling 16-week direct-method liquidity forecast that flags cash buffer breaches 6–12 weeks ahead. |
+| **Supply Chain & Operations Directors** *(Purchase Order Cash Flow & Prepayment Tracker)* | Simulate the exact weekly cash impact of placing a large seasonal factory PO or delaying a shipment date before signing supplier contracts. |
+| **Inventory-Heavy Founders & CEOs** *(Working Capital & Runway Forecast Spreadsheet)* | Maintain a single forward-looking dashboard of net operating liquidity across rapid SKU expansion, wholesale fulfillment, and inventory build cycles. |
+| **Procurement & Purchasing Leads** *(Supplier Deposit & Payment Terms Planner)* | Evaluate vendor prepayment demands (e.g., 30/70 vs. 50/50 split terms) against actual projected weekly cash availability. |
+| **Fractional CFOs & Advisory CPAs** *(Short-Term Treasury & Turnaround Cash Model)* | Deploy a standardized, audit-ready weekly cash flow control tool for SME clients facing tight working capital or lender reporting covenants. |
 
 ---
 
-## How The 16-Week Window Works
+## Real-World Use Cases: Solving Pre-Invoice Working Capital & Liquidity Scenarios
 
-The 16-week window slides forward each week, not each month. Every new entry is mapped to a specific future week based on estimated operational dates and contracted payment terms.
+### Scenario A: Import/Export & Wholesale Distributors Managing 30/70 Factory Prepayments
 
-| Operational input | Derived cash event |
-|---|---|
-| Estimated shipment date + "payment before shipment" term | Customer receipt in the week prior to estimated shipment |
-| Estimated goods arrival date + "payment on delivery" term | Supplier outflow in the estimated arrival week |
-| Invoice date + "Net 30" term | Customer receipt approximately 4 weeks forward |
+Importers routinely pay 30% upon PO placement and 70% upon Bill of Lading or port arrival, while wholesale retail buyers pay Net 30 or Net 60 after warehouse delivery. By logging open POs and wholesale SOs into the **16-Week Cash Timeline**, the controller sees the exact 4-to-8 week working capital trough between paying the overseas factory and collecting from the domestic retailer.
 
-**The trap in numbers:**
+### Scenario B: Contract Manufacturers & Custom Equipment Builders Tracking Milestone Billing
 
-A business running 10 open orders simultaneously — each with its own deposit structure, balance payment timing, and supplier prepayment schedule — carries upwards of 30 interacting cash events at any given moment. Each event depends on a current operational estimate to remain accurate. Manual consolidation introduces error at each step.
+Manufacturers running multi-stage builds collect customer progress payments (e.g., 40% deposit, 30% on sub-assembly, 30% prior to dispatch) while purchasing raw materials upfront. When a production milestone slips by two weeks, updating the estimated shipment date in the workbook automatically shifts the downstream customer cash inflow and reveals whether raw material payables will breach the minimum cash reserve.
 
-The monthly reset mental model approves positions that the rolling weekly window does not. The calculation is structural, not judgmental. Automation eliminates the error class entirely.
+### Scenario C: Fractional CFOs Running Weekly Cash War-Rooms & Lender Covenant Reporting
 
-**Why forecast reliability decays at the outer horizon:** The near horizon of weeks 1–8 is populated by commitments already in motion — shipment dates and payment terms that are confirmed or nearly so. Weeks 9–16 depend on operational estimates that may shift materially as orders are placed or delayed. The model is most reliable within the 6–8 week near-horizon. The outer window is directionally useful for planning; it is not a guarantee.
+During working capital turnarounds or seasonal credit-line draws, banks and leadership teams require a transparent weekly direct cash forecast (often requested as a 13-week or 16-week rolling cash flow report). This template provides transaction-level drill-downs showing exactly which customer invoices and vendor POs drive each week's net cash flow.
 
 ---
 
-## Workbook Logic
+## What The Workbook Tracks: Pain-Point to Solution Mapping
 
-The workbook is organized around a practical cash planning workflow:
-
-1. Enter all open AR, AP, sales orders, and purchase orders with estimated dates and payment terms.
-2. Apply deduplication to identify and exclude purchase orders already converted to invoices.
-3. Map each open commitment to its expected cash week and direction.
-4. Calculate the running 16-week balance forward from the opening cash position.
-5. Compare each week's projected balance against the minimum safe threshold.
-6. Flag gap weeks and identify the specific transactions driving each gap.
-7. Preserve the commitment record for weekly rolling review and team communication.
-
-The workbook is intended to be a decision-support and planning tool. It does not replace accounting software, auditable financial records, or professional advice for complex financing decisions.
+| Treasury & Cash Management Pain Point | High-Frequency Search Requirement | Built-In Excel Workbook Solution |
+| --- | --- | --- |
+| **Unbilled POs Missing from Cash Forecasts** | *How to include open purchase orders in cash flow forecast Excel* | **Unified Open Commitment Ledger:** Captures billed AR, billed AP, unbilled Sales Orders, and open Purchase Orders in one structured input table. |
+| **Double-Counting POs After Invoicing** | *Prevent duplicate PO and invoice entries in cash projection* | **Automated PO-to-Invoice Deduplication:** Identifies and excludes purchase orders that have already converted into formal AP invoices so every dollar is counted once. |
+| **Intra-Month Overdrafts & Surprise Shortfalls** | *Weekly rolling cash flow forecast template with low-cash alerts* | **Configurable Threshold Alert Layer:** Compares projected weekly ending cash against your custom Minimum Safe Cash Balance and highlights breach weeks in real time. |
+| **Stale Shipment & Delivery Estimates** | *Dynamic cash flow model based on shipment dates and payment terms* | **Automated Term-to-Week Mapping:** Translates operational dates (Estimated Ship Date, Arrival Date, Invoice Date) and payment terms into exact weekly cash buckets. |
+| **Slow Pre-Commitment Approval Checks** | *Test cash impact of new supplier purchase order before buying* | **Pre-Decision Liquidity Sandbox:** Enter a proposed PO or customer order to see immediately whether the new commitment creates a cash deficit 6–16 weeks out. |
 
 ---
 
-## Purchase
+## Case Study: Monthly Accrual Blindness vs. 16-Week Rolling Cash Visibility
 
-Use the complete Excel workbook here:
+**Business Profile:** Consumer goods importer managing $2M–$10M in annual turnover, operating with mixed customer deposit terms, overseas supplier prepayment schedules, and a lean single-manager finance team.
 
-[Purchase the complete Excel workbook →](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+**The Operational Breakdown:** Every week, the finance manager spent two hours cross-referencing CRM sales orders, customer deposit receipts, open factory POs, and freight arrival schedules across disconnected spreadsheets. Despite showing positive monthly net cash flow on paper, the business suffered two emergency cash shortfalls in a single quarter—both discovered less than 48 hours before international supplier wires were due.
+
+### Comparison: Disconnected AR/AP Spreadsheets vs. Automated 16-Week Commitment Model
+
+| Treasury Operation | Manual Disconnected Spreadsheets (Before) | Automated 16-Week Rolling Cash Flow Workbook (After) |
+| --- | --- | --- |
+| **Commitment Data Architecture** | Siloed CRM sales sheets, procurement PO trackers, and accounting AR/AP exports | **Single unified commitment ledger** covering AR, AP, Open SOs, and Open POs with deduplication |
+| **Weekly Forecast Preparation Time** | ~2 hours of manual VLOOKUPs and date cross-referencing every Friday | **Under 5 minutes per week**; rolling 16-week window updates dynamically upon date entry |
+| **Pre-Invoice Prepayment Visibility** | Blind to supplier deposits and milestone balances until vendor bills are booked | **Full milestone mapping** across deposit tranches, pre-shipment payments, and delivery wires |
+| **Liquidity Shortfall Detection Window** | Discovered 24–48 hours before wire due date (forced emergency credit draws) | **Flagged 6–12 weeks in advance** via automated minimum cash threshold breach alerts |
+
+### The Exact Inflection Point This Workbook Surfaces
+
+Consider a **$100,000 Customer Sales Order** and its linked **$50,000 Supplier Purchase Order** starting from an **Opening Cash Balance of $10,000**:
+
+* **Supplier PO Balance ($30,000 outflow):** 60% due upon goods arrival in **Week 5**.
+* **Customer SO Balance ($70,000 inflow):** 70% due prior to warehouse dispatch in **Week 6**.
+
+| Reporting Granularity | Week 5 Net Cash Position | Week 6 Net Cash Position | Operational Conclusion |
+| --- | --- | --- | --- |
+| **Traditional Monthly Cash Summary** | *Hidden inside monthly total* | **+$50,000 Month-End Cash** | False green light; finance approves terms without seeing the mid-month default |
+| **16-Week Rolling Weekly Model** | **−$20,000 Cash Shortfall** ($10K − $30K) | **+$50,000 Recovery** (−$20K + $70K) | **Flags the $20,000 Week 5 deficit 5 weeks early**, allowing the team to align supplier wire terms with customer receipt |
 
 ---
 
-## Limitations
+## Treasury Standards Behind Direct-Method Rolling Cash Forecasting
 
-- **Input dependency** — forecast accuracy is bounded by the quality of data entered; stale shipment estimates or missing commitments produce a false sense of visibility without warning
-- **Manual refresh required** — the model does not update automatically; without consistent weekly maintenance, the rolling window degrades and gaps become invisible again
-- **Not a system of record** — this is a decision-support layer; it does not replace accounting software, an ERP, or auditable financial records
-- **Deterministic, not probabilistic** — each cash event is modelled as a fixed date and fixed amount; payment delay risk, FX movement, and order cancellation scenarios require manual overlay
-- **Outer-horizon reliability** — weeks 10–16 depend on operational estimates that may shift materially; the model is most reliable within the 6–8 week near-horizon
-- **Multi-currency not modelled** — businesses with significant FX exposure will need to apply exchange rate assumptions as a manual overlay
-- **Scale context** — designed for businesses managing 5–50 simultaneous open positions; beyond this range, the manual entry model requires structural adaptation
+Corporate treasury teams rely on **short-term direct-method rolling cash flow forecasting** because accrual income statements measure profitability rather than cash solvency. Rapidly growing product businesses frequently generate strong accounting margins while running out of operating cash due to inventory prepayment timing.
+
+The direct method bypasses accrual accounting adjustments and maps **100% of expected gross cash receipts and gross cash disbursements** to specific weekly buckets:
+
+| Traditional Reporting Method | Structural Limitation in Operations | How the 16-Week Direct-Method Model Solves It |
+| --- | --- | --- |
+| **Indirect P&L Cash Estimation** | Conflates accounting net income with liquid bank funds; hides mid-month working capital spikes | Maps **actual dated cash receipts and wire disbursements** week by week |
+| **Daily Bank Balance Checking** | Purely backward-looking; shows settled cash while ignoring $100K+ in committed upcoming PO wires | Projects **forward running cash balances** across the next 16 consecutive weeks |
+| **Monthly AR / AP Aging Reports** | Excludes unbilled purchase orders and pre-shipment customer milestones | Integrates **pre-invoice order commitments** alongside billed receivables and payables |
+
+**Authoritative Treasury & Cash Management Frameworks Referenced:**
+
+* [AICPA: Direct Method Cash Flow Forecasting & Working Capital Management](https://www.aicpa-cima.com)
+* [Association for Financial Professionals (AFP): Short-Term Treasury & Rolling Cash Forecasting Standards](https://www.afponline.org)
 
 ---
 
-## About This Project
+## How the 16-Week Rolling Horizon & Date-Offset Mapping Work
 
-This workbook is part of a broader effort to translate complex operational and financial requirements into lightweight tools that small and medium-sized organizations can actually use.
+The 16-week forecast horizon rolls forward week by week. Every open order or invoice is assigned to a specific future cash week by combining its **operational milestone date** with its **contracted payment term**:
 
-No ERP. No treasury software subscription. No custom development project.
+| Operational Milestone Input | Contracted Payment Term | Derived Weekly Cash Flow Event in Model |
+| --- | --- | --- |
+| **Estimated Customer Shipment Date** | *Balance Due Prior to Shipment* | **Cash Inflow (Receipt)** mapped to the week immediately preceding estimated shipment |
+| **Estimated Goods Arrival Date (ETA)** | *Balance Due on Delivery / Arrival* | **Cash Outflow (Supplier Wire)** mapped to the estimated warehouse/port arrival week |
+| **Customer Invoice Issue Date** | *Net 30 Days Credit Term* | **Cash Inflow (Receipt)** mapped 4 weeks forward from invoice date |
 
-Just clear business logic, structured data, and repeatable decision support — delivered in software your team already has.
+**Why Forecast Precision Splits Between the Near Horizon (Weeks 1–8) and Outer Horizon (Weeks 9–16):**
 
-If your operation involves cash management, procurement cycles, or customer billing structures that currently live in someone's head or a disconnected spreadsheet, [see what else is available →](https://www.theseusworkshop.com)
+* **Weeks 1–8 (High-Confidence Execution Window):** Driven by confirmed invoices, locked vessel schedules, and active purchase orders already in production. Used for hard payment scheduling, wire approvals, and credit-line draw decisions.
+* **Weeks 9–16 (Strategic Planning & Procurement Window):** Driven by estimated production lead times and pipeline sales orders. Used to stress-test whether new supplier POs can be funded from internal cash flow before contracts are signed.
+
+---
+
+## Quick Start Tutorial: How to Build Your 16-Week Rolling Cash Flow Forecast in 7 Steps
+
+Follow this step-by-step workflow to transition your finance and operations team from reactive bank-balance checks to proactive 16-week liquidity management:
+
+1. **Test Commitment Scenarios in the Interactive Browser Demo**
+Open the [Interactive 16-Week Rolling Cash Flow Web Simulator](https://hyvoid.github.io/rolling-cashflow-forecast/) to explore how open POs, customer deposits, and shipment delays shift weekly cash balances in real time.
+2. **Configure Opening Cash Balance and Minimum Safe Cash Buffer**
+Enter your current operating bank balance, define your starting Monday forecast date, and set your company's **Minimum Safe Cash Threshold** (e.g., $25,000 or 1 month of fixed payroll/opex).
+3. **Log Billed Accounts Receivable (AR) and Accounts Payable (AP)**
+Input outstanding customer invoices and vendor bills with their contracted due dates to establish your baseline post-invoice cash timeline.
+4. **Enter Unbilled Sales Orders (SO) and Open Purchase Orders (PO)**
+Record confirmed customer orders and active supplier POs along with deposit percentages, balance percentages, estimated shipment/arrival dates, and payment terms.
+5. **Run Automated PO-to-Invoice Deduplication**
+Mark or link purchase orders that have already been billed by suppliers so the deduplication engine excludes them from open commitments and prevents double-counting.
+6. **Inspect Weekly Threshold Breach Alerts and Diagnose Cash Troughs**
+Review the 16-week cash timeline to spot any week falling below your minimum buffer, then filter the commitment table by that week number to identify the exact supplier PO or delayed customer collection driving the gap.
+7. **Standardize Your Weekly Cash Review with the Reusable Excel Workbook**
+Once you have tested the logic in the single-session web preview, **[Download the Complete, Reusable 16-Week Rolling Cash Flow Excel Template](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)** to save your ongoing company data, customize counterparty tracking, and run your weekly 5-minute liquidity review offline in Microsoft Excel.
+
+*Disclaimer: This workbook is an operational cash planning and decision-support model. It supplements—rather than replaces—formal GAAP/IFRS accounting software, audited financial statements, and licensed treasury or financing advice.*
+
+---
+
+## Download the Complete Excel Template
+
+Ready to eliminate surprise payment-date shortfalls and unify your AR, AP, and open order commitments in one rolling timeline?
+
+👉 **[Get the Complete 16-Week Rolling Cash Flow Forecast Excel Workbook](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)**
+
+---
+
+## Technical Scope & Operational Limitations
+
+* **Data Freshness Dependency:** Forecast accuracy relies on current operational estimates; unlogged supplier POs or outdated freight arrival dates will understate or misalign weekly cash outflows.
+* **Weekly Rolling Maintenance Cadence:** Designed for a 5-minute weekly refresh (updating opening cash, rolling the start date forward, and adjusting shifted shipment ETAs).
+* **Decision-Support Layer (Not an Accounting GL):** Built for forward-looking liquidity planning; does not replace ERP systems, double-entry bookkeeping software, or statutory tax records.
+* **Deterministic Date Mapping:** Models each commitment tranche on a specific target date and amount; probabilistic late-payment haircuts or order cancellation stress-tests require manual date/amount overrides.
+* **Outer-Horizon Variance (Weeks 9–16):** Weeks 1–8 reflect near-locked commitments, whereas Weeks 9–16 reflect operational estimates subject to supply chain lead-time shifts.
+* **Single Base Currency Architecture:** Multi-currency supplier POs (e.g., USD vs. EUR/CNY) should be entered at your budgeted or forward-hedged exchange rate in the base currency.
+* **Recommended Operational Scale:** Optimized for SMEs actively managing **5 to 50 concurrent open orders/POs** per rolling cycle in Microsoft Excel.
+
+---
+
+## About Theseus Workshop
+
+We build practical, audit-ready financial and operational Microsoft Excel models for wholesale, manufacturing, and operator-led businesses that need institutional treasury and accounting control inside standard spreadsheets.
+
+Every workbook uses transparent native Excel formulas with zero black-box macros, giving finance and operations teams complete visibility into every weekly cash calculation.
+
+Solving complex working capital, inventory procurement, or capital allocation problems in spreadsheets? **[Explore Our Full Collection of Financial & Operational Excel Templates at Theseus Workshop →](https://www.theseusworkshop.com)**
 
 ---
 
 ## License
 
-Distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+Distributed under the [Apache License 2.0 Open Source License](https://www.apache.org/licenses/LICENSE-2.0).
+
