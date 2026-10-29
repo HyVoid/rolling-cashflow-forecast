@@ -10,7 +10,9 @@
 
 **A direct-method 16-week rolling cash flow forecast spreadsheet built in Microsoft Excel for wholesale, import/export, e-commerce inventory, and manufacturing businesses managing open purchase orders (POs), supplier prepayments, customer deposits, and short-term working capital.**
 
-[Launch Interactive 16-Week Rolling Cash Flow Simulator Demo](https://hyvoid.github.io/rolling-cashflow-forecast/) · [Download the Complete 16-Week Rolling Cash Flow Excel Workbook](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+[Launch Interactive 16-Week Rolling Cash Flow Simulator Demo](https://hyvoid.github.io/rolling-cashflow-forecast/) ·
+
+[Download the Complete 16-Week Rolling Cash Flow Excel Workbook](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
 
 </div>
 
