@@ -1,243 +1,291 @@
 [ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
-# Verhindern Sie Liquiditätsengpässe, bevor sie den Zahlungstermin erreichen
+
+# 16-Wochen-rollierende Cashflow-Forecast-Excel-Vorlage: Direktmethoden-Liquiditätsplaner, PO-Verbindlichkeiten-Tracker & Working-Capital-Modell
 
 <div align="center">
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Microsoft%20Excel-217346)
-![Focus](https://img.shields.io/badge/focus-Operations--Stage%20Business-orange)
+![Focus](https://img.shields.io/badge/focus-Working%20Capital%20%26%20Treasury-orange)
 
-**Konzipiert für Unternehmen in Konsumgütern, Großhandel und Fertigung, die zugesagte Zahlungsbewegungen, Vorauszahlungsverpflichtungen und rollende Liquidität verfolgen müssen, bevor ein Engpass entsteht.**
+**Eine Direktmethoden-16-Wochen-rollierende Cashflow-Forecast-Tabelle, erstellt in Microsoft Excel für Großhandels-, Import/Export-, E-Commerce-Inventar- und Fertigungsunternehmen, die offene Bestellungen (POs), Lieferantenvorauszahlungen, Kundenanzahlungen und kurzfristiges Working Capital verwalten.**
 
-[Live-Vorschau](https://hyvoid.github.io/rolling-cashflow-forecast/) · [Vollständige Excel-Version kaufen](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+[Interaktive Demo des 16-Wochen-rollierenden Cashflow-Simulators starten](https://hyvoid.github.io/rolling-cashflow-forecast/) ·
+
+[Die vollständige 16-Wochen-rollierende Cashflow-Excel-Arbeitsmappe herunterladen](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
 
 </div>
 
-Verfolgen Sie offene Auftrags-Zahlungsverpflichtungen, erkennen Sie Liquiditätslücken Wochen im Voraus und pflegen Sie eine einzige zukunftsorientierte Wahrheitsquelle für die kurzfristige Liquiditätsfähigkeit.
+**16-Wochen-rollierende Cashflow-Forecast-Arbeitsmappe** ist ein automatisierter **Microsoft Excel Kurzfrist-Liquiditätsplaner** und **Tracker für offene Verbindlichkeiten**. Sie geht über übliche **13-Wochen-Cashflow-Modelle** hinaus und deckt volle 110 Tage Inventar- und Produktionsvorlaufzeit ab; sie konsolidiert **Debitoren (AR)**, **Kreditoren (AP)**, **nicht fakturierte Verkaufsaufträge (SO)** und **zugesagte Bestellungen (PO)** in einer einzigen wöchentlichen Cash-Zeitachse — und meldet Working-Capital-Engpässe sowie Verletzungen des minimalen Cash-Puffers Wochen vor den Fälligkeitsterminen.
 
 ---
 
-## Schnelle Vorschau
+## Visuelle Vorschau: 16-Wochen-Cash-Zeitachse & Schwellen-Alarm-Dashboard
 
-<img width="1672" height="941" alt="ChatGPT Image May 25, 2026, 03_53_03 PM" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
+<img width="1672" height="941" alt="16-Week Rolling Cash Flow Forecast Excel Template showing weekly cash inflows, supplier PO prepayments, net liquidity balance, and shortfall alerts" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
 
-> Sehen Sie sich die interaktive Arbeitsmappen-Vorschau an: [16-Wochen-Cashflow-Demo](https://hyvoid.github.io/rolling-cashflow-forecast/)
+> Testen Sie das wöchentliche Verbindlichkeiten-Mapping und die Liquiditätsschwellen-Alarme in Ihrem Browser: [Interaktive 16-Wochen-Direktmethoden-Cashflow-Forecast-Demo](https://hyvoid.github.io/rolling-cashflow-forecast/)
 
 ---
 
-## Warum dies existiert
+## Warum Periodenrechnung kurzfristige Cash-Engpässe nicht verhindert
 
-Die meisten Liquiditätsengpässe in wachsenden Unternehmen werden nicht durch unprofitable Operationen verursacht.
+Profitable Großhandels-, Fertigungs- und physische Produktunternehmen erleben in Wachstumsphasen routinemäßig akute Liquiditätsengpässe. Diese Cash-Engpässe entstehen, weil **Kundenanzahlungen**, **meilensteinbasierte Zwischenabrechnungen**, **vertraglich zugesagte Lieferantenvorauszahlungen** und **gestaffelte Net 30/60/90-Zahlungsbedingungen** Wochen eintreten, bevor überhaupt eine Rechnung in das Hauptbuch gebucht wird.
 
-Sie entstehen meist, weil Kundenvorauszahlungen, meilensteinbezogene Eingänge, zugesagte Bestellungen und gestaffelte Zahlungsbedingungen manuell schwer zu konsolidieren sind — und standardmäßige Buchhaltungsaufzeichnungen strukturell blind dafür sind, bis eine Rechnung ausgestellt wird.
+**Der reaktive Bankkonto- und AR/AP-Workflow (hohes Ausfallrisiko):**
 
-Das Risiko ist einfach:
+```text
+Supplier wire due date arrives
+-> Finance checks current bank balance and billed AP aging
+-> Unbilled PO prepayments and freight commitments overlooked
+-> Working capital shortfall discovered 48 hours before wire deadline
 
 ```
-Payment due date arrives
--> Manual bank balance check
--> Prior commitments missed
--> Shortfall discovered at the wire
+
+**Der proaktive 16-Wochen-Verbindlichkeiten-Forecasting-Workflow (Kontrolle vor der Entscheidung):**
+
+```text
+New customer order or supplier Purchase Order (PO) proposed
+-> Prepayment and balance milestones logged once in the commitment ledger
+-> 16-week rolling cash flow timeline updates automatically
+-> Liquidity gap and minimum buffer breach flagged 6–12 weeks in advance
+
 ```
 
-Diese Arbeitsmappe wurde entwickelt, um den Workflow zu ändern:
-
-```
-New order or supplier PO considered
--> Commitment entered once
--> 16-week cash timeline updated automatically
--> Liquidity gap flagged before it becomes a crisis
-```
-
-Das kommerzielle Problem ist nicht nur Cash-Management. Es ist operative Transparenz. Finanzteams und Operatoren müssen wissen, ob das Unternehmen seine nächste Verpflichtung decken kann — bevor Zahlungsbedingungen zugestimmt werden.
+Finanzmanager, Controller und Operations-Leiter benötigen Liquiditätstransparenz vor der Entscheidung. Bevor sie eine Lieferantenbestellung unterzeichnen oder einem Großhandelsabnehmer Net 60-Bedingungen einräumen, müssen Operatoren verifizieren, dass das wöchentliche Cash-Tief über der minimalen operativen Cash-Reserve des Unternehmens bleibt.
 
 ---
 
-## Drei Liquiditätsfallen, die wachsende Unternehmen ereilen
+## Die Geschäftslogik & Methodik: Verbindlichkeiten-Forecasting nach Direktmethode
 
-### Falle 1 — Monatsauswertungen werden fälschlich als Liquiditätsbild gelesen
+Diese Arbeitsmappe löst das **Problem der Working-Capital-Blindheit vor der Fakturierung**, indem sie **rollierendes Cashflow-Forecasting nach der Direktmethode** mit **Order-to-Invoice-Deduplizierung von Verbindlichkeiten** kombiniert.
 
-Standard-AR/AP-Berichte spiegeln wider, was fakturiert wurde. Sie spiegeln nicht wider, was zugesagt wurde.
+### Das kommerzielle Problem: Die Timing-Lücke zwischen Periodenrechnung und Cash in physischen Lieferketten
 
-Ein Unternehmen mit 80.000 $ an bestätigten Kundeneinlagen und 60.000 $ an vertraglichen Lieferantenvorauszahlungen, die nächsten Monat fällig werden, zeigt keines davon in seiner Gewinn- und Verlustrechnung, bis Waren fließen und Rechnungen ausgestellt werden. Das Finanzteam sieht heute einen gesunden Bankkontostand. Der kommende Engpass ist unsichtbar.
+Standard-Buchhaltungssoftware (QuickBooks, Xero, NetSuite GL) erfasst finanzielle Ereignisse erst, wenn eine **Rechnung** oder **Lieferantenrechnung** ausgestellt wird. In Fertigung, Großhandelsvertrieb und Importgeschäft wird Cash jedoch rechtlich auf der **Auftragsebene** zugesagt:
 
-Finanzteams, die Cash aus Monatsauswertungen steuern, arbeiten routinemäßig mit einem Bild, das strukturell vier bis sechs Wochen hinter der Realität zurückliegt. Das mentale Modell fühlt sich vollständig an; die Daten sind es nicht.
+1. **Beschaffungs-Cash-Abflüsse:** Eine Fabrik verlangt 30% Anzahlung bei Erteilung der Bestellung (PO) und 70% Restbetrag bei Frachtbrief (B/L) oder Wareneingang im Lager — Wochen, bevor eine formelle Kreditorenrechnung gebucht wird.
+2. **Verkaufs-Cash-Zuflüsse:** Ein B2B-Kunde zahlt 25% Anzahlung bei Bestätigung des Verkaufsauftrags (SO) und die restlichen 75% entweder vor dem Versand oder zu Net 30/60-Bedingungen nach der Lieferung.
+3. **Warum 16 Wochen übliche 13-Wochen-Modelle schlagen:** Eine übliche unternehmerische 13-Wochen-Cash-Prognose (90 Tage) endet genau, bevor ein 60-tägiger Produktionslauf plus 30-tägiger Seetransport plus Net 30-Kundeneinziehung abgeschlossen ist. Die Erweiterung des rollierenden Fensters auf **16 Wochen (112 Tage)** erfasst den gesamten Cash Conversion Cycle von der ersten PO-Anzahlung bis zum letzten Kundeneingang.
 
-### Falle 2 — Vorauszahlungen und Bestellungen werden in getrennten Systemen verfolgt
+### Die Kernmethodik: Dreistufiges deterministisches Cash-Mapping
 
-Wenn dasselbe Unternehmen am Montag eine 30%-ige Kundenanzahlung nimmt und am Donnerstag eine 40%-ige Lieferantenvorauszahlung leistet, beeinflussen beide Transaktionen denselben Cash-Pool — aber sie leben typischerweise in verschiedenen Systemen, verschiedenen Tabellenkalkulationen oder verschiedenen Teams.
+Statt Cash aus GuV-Durchschnittswerten hochzurechnen, führt die Arbeitsmappe eine deterministische dreistufige Berechnung über ein gleitendes 16-Wochen-Fenster aus ($t \in [1, 16]$):
 
-Operationen, die getrennte Verfolgung für Vertriebsverpflichtungen und Beschaffungsverpflichtungen pflegen — eine natürliche Arbeitsteilung — übersehen systematisch die Nettoliquiditätsposition. Die Regulierung erkennt diese operative Grenze nicht. Auch das Bankkonto nicht.
+1. **Deduplizierungs-Engine für Verbindlichkeiten zu Rechnungen:**
 
-### Falle 3 — Lücken werden am Fälligkeitstag entdeckt
+$$\text{Active Cash Events} = \{ \text{Billed AR} \} \cup \{ \text{Billed AP} \} \cup \{ \text{Open SOs} \setminus \text{Invoiced SOs} \} \cup \{ \text{Open POs} \setminus \text{Billed POs} \}$$
 
-Manuelle Verifizierung erfolgt typischerweise, wenn eine Zahlung fällig wird oder wenn jemand das Bankkonto prüft. Bis eine Lücke identifiziert ist, hat sich das Handlungsfenster geschlossen. Reaktive Antworten — Notfall-Kreditlinien, Lieferanten-Nachverhandlungen, verzögerte Lohnzahlungen — verursachen echte Kosten und echten Beziehungsschaden.
 
-Das Abfangen vor der Lücke erfordert, dass Liquiditätsrisiken Wochen vor Fälligkeit der Verpflichtung sichtbar sind — was erfordert, dass alle offenen Verpflichtungen aktuell sind und alle Zeitberechnungen automatisch zum Planungszeitpunkt laufen.
 
-Die Lücke versteckt sich in der Regel in der Beziehung zwischen:
+*Geschäftswirkung:* Sobald eine Bestellung in Ihrem Buchhaltungssystem in eine formelle Lieferantenrechnung umgewandelt wird, schließt das Deduplizierungs-Flag die ursprüngliche PO-Position aus, sodass der Cash-Abfluss nie doppelt gezählt wird.
+2. **Übersetzung von Meilensteindaten in Datumsversätze:**
+Jede aktive Verbindlichkeit wird in diskrete Cash-Tranchen zerlegt (z. B. Anzahlungs-Tranche + Restbetrags-Tranche), die basierend auf operativen Auslösedaten (Auftragsdatum, voraussichtliches Versanddatum, voraussichtliches Ankunftsdatum oder Rechnungsdatum) zuzüglich vertraglicher Zahlungsbedingungen ($\Delta \text{Days}$) Ziel-Kalenderwochen zugeordnet werden.
+3. **Rollierende wöchentliche Liquiditäts- und Pufferbruch-Bewertung:**
 
-- Anfangsbestand in Bar
-- Zeitpunkt des Eingangs von Einlagen und Vorauszahlungen
-- Zahlungseingangsdaten der Kunden
-- Fälligkeitstermine der Lieferantenzahlungen
-- vertragliche Zahlungsbedingungen
-- Auftragsvolumen und Wachstumsrate
+$$\text{Ending Cash}_{w} = \text{Opening Cash}_{w} + \sum \text{Committed Inflows}_{w} - \sum \text{Committed Outflows}_{w}$$
 
-Deshalb bringt die manuelle Abstimmung das Problem oft zu spät ans Licht — oder übersieht es vollständig.
 
----
+$$\text{Liquidity Variance}_{w} = \text{Ending Cash}_{w} - \text{Minimum Safe Cash Threshold}$$
 
-## Für wen dieses Tool gedacht ist
 
-| Benutzer | Praktischer Anwendungsfall |
-|---|---|
-| Finanzmanager | Liquiditätslücken 6–16 Wochen im Voraus identifizieren, bevor sie zu Krisen werden |
-| Betriebsleiter | Die Cash-Auswirkung eines neuen Auftrags oder einer Lieferanten-PO verstehen, bevor verpflichtet wird |
-| Gründer und CEOs | Eine einzige zukunftsorientierte Sicht auf die Liquiditätsfähigkeit pflegen, während das Unternehmen skaliert |
-| Beschaffungsteams | Vorauszahlungsanforderungen gegenüber tatsächlich verfügbarer Liquidität bewerten |
-| Externe Buchhalter | Kurzfristige Cash-Beratung bieten, ohne ein Modell von Grund auf zu bauen |
 
-Am besten geeignet für Unternehmen mit gemischten Kunden-Vorauszahlungs- und Lieferanten-Vorauszahlungsstrukturen, wo Treasury-Software zu kostenintensiv ist, manuelle Ansätze aber nicht mehr skalieren.
+*Geschäftswirkung:* Jede Woche, in der $\text{Ending Cash}_{w} < \text{Minimum Safe Cash Threshold}$ gilt, löst einen sofortigen visuellen Alarm aus und isoliert die exakte Lieferanten-PO oder verzögerte AR-Position, die das Working-Capital-Tief verursacht.
 
 ---
 
-## Was die Arbeitsmappe tut
+## Drei Working-Capital-Fallen in manuellen Cashflow-Tabellen
 
-### Protokollierung offener Verpflichtungen
-Ein einziger Dateneingabepunkt für alle AR, AP, offenen Verkaufsaufträge und offenen Bestellungen. Teams geben grundlegende Verpflichtungs- und Zeitinformationen einmal ein; die Berechnungen des Cash-Zeitplans laufen automatisch im Hintergrund.
+### Falle 1: Liquiditätssteuerung über monatliche GuV und fakturierte AR/AP-Aging-Berichte
 
-### 16-Wochen-Cash-Zeitplan
-Automatische Zuordnung jeder offenen Verpflichtung zu einer bestimmten Woche und Cash-Richtung. Das rollende Fenster aktualisiert sich jede Woche, wenn neue Einträge hinzugefügt werden und vorherige Wochen abschließen.
+Standard-Aging-Berichte für Debitoren (AR) und Kreditoren (AP) zeigen nur **fakturierte Transaktionen**.
 
-### Liquiditätsstatus vor der Entscheidung
-Der projektierte Cash-Saldo jeder Woche ist sichtbar, bevor ein neuer Auftrag angenommen oder eine neue Lieferantenbedingung vereinbart wird. Kein manuelles Abgleichen. Keine Entdeckung am Zahlungstag.
+Betrachten Sie einen Importeur, der $80,000 an nicht fakturierten Kundenauftragsanzahlungen hält und nächsten Monat bei Containerankunft $60,000 an vertraglich zugesagten Fabrik-Restzahlungen gegenübersieht. Keine der beiden Verpflichtungen erscheint in der GuV oder im üblichen AP-Aging-Bericht, bevor die Ware eintrifft und Lieferantenrechnungen erfasst werden. Wer das Treasury wöchentlich über monatliche Periodenabschlüsse steuert, liegt mit dem Finanzteam vier bis sechs Wochen hinter den realen Cash-Zusagen zurück.
 
-### Deduplizierungslogik
-Bestellungen, die bereits in Rechnungen umgewandelt wurden, werden automatisch identifiziert und ausgeschlossen — wodurch sichergestellt wird, dass jede erwartete Cash-Bewegung genau einmal gezählt wird und die Sicht auf offene Verpflichtungen sauber bleibt.
+### Falle 2: Getrennte Verfolgung zwischen Verkaufsaufträgen (CRM) und Bestellungen (Beschaffung)
 
-### Schwellenwert-Alarmebene
-Ein minimaler sicherer Cash-Saldo wird vom Unternehmen konfiguriert. Das Modell hebt die Wochen hervor, die die Schwelle verletzen, und die spezifischen Transaktionen, die jede Lücke antreiben — und gibt Teams eine transaktionsgenaue Diagnose, nicht nur eine rote Flagge.
+Wenn das Vertriebsteam am Montag eine 30%-Kundenanzahlung annimmt und das Einkaufsteam am Donnerstag eine 40%-Lieferantenvorauszahlung zusagt, schöpfen beide Aktionen aus demselben operativen Bankkonto. In den meisten KMU leben Vertriebszusagen jedoch in einem CRM oder Auftragsblatt, während Lieferanten-POs in einem separaten Beschaffungs-Tracker liegen.
 
-### Prüfungsfertige Struktur
-Jeder Eintrag ist von Tag eins an strukturiert und nachverfolgbar. Der vollständige 16-Wochen-Verpflichtungsdatensatz kann nach Richtung, Gegenpartei oder Woche gefiltert und ohne Nachbearbeitung überprüft werden.
+Getrennte Tabellen für Kundenzuflüsse und Lieferantenabflüsse zu pflegen verhindert, dass Operatoren die **netto-wöchentliche Cash-Position** sehen, wenn sich Erfüllungsdaten auch nur um eine Woche verschieben.
 
----
+### Falle 3: Cash-Tiefs innerhalb des Monats, versteckt in positiven Monatssummen
 
-## Beispielszenario
+Eine monatliche Cashflow-Zusammenfassung kann am Monatsende einen gesunden positiven Netto-Cash-Bestand ausweisen und gleichzeitig einen fatalen mehrtägigen Overdraft in Woche 2 oder Woche 3 verbergen.
 
-**Unternehmensprofil:** Importeur von Konsumgütern. Gemischte Kunden-Vorauszahlungsbedingungen und Lieferanten-Vorauszahlungsanforderungen. Einzelne Finanzfunktion.
+Wöchentliche Cash-Engpässe entstehen aus dem Timing-Mismatch zwischen sechs operativen Variablen:
 
-**Das Problem:** Jede Woche gleicht der Finanzmanager manuell offene Verkaufsaufträge, ausstehende Kundeneinlagen, anhängige Lieferantenrechnungen und erwartete Wareneingangsdaten ab, um verfügbares Cash zu schätzen. Kundenverpflichtungen werden im CRM verfolgt. Lieferantenverpflichtungen werden in der Beschaffungstabelle verfolgt. Die Abstimmung von beidem in eine Nettoliquiditätsposition dauert zwei Stunden und erzeugt eine Sicht, die bereits eine Woche alt ist.
+* Anfangsbestand des operativen Bankkontos
+* Eingangsdaten von Kundenanzahlungen und Meilensteinen
+* Einzugsbedingungen für Kunden-Restbeträge (z. B. Vor Versand vs. Net 30)
+* Überweisungstermine für Lieferanten-PO-Vorauszahlungen und Zahlung bei Wareneingang
+* Ausgaben für Fracht, Zölle und Zollabfertigung
+* Beschleunigtes Auftragsvolumen während saisonaler Spitzenproduktion
 
-Über ein Quartal des Betriebs wurden zwei Liquiditätslücken identifiziert — beide innerhalb von 48 Stunden des Zahlungstermins.
-
-| | Vorher | Nachher |
-|---|---|---|
-| Verpflichtungsstruktur | Zwei getrennte Blätter, eines pro Team | Eine einheitliche Arbeitsmappe |
-| Wöchentliche Cash-Prüfzeit | ~2 Stunden über alle offenen Positionen | Unter 5 Minuten pro Woche |
-| Vorauszahlungskonsolidierung | Manuelles Abgleichen | Automatisch über AR, AP, Verkaufsaufträge, POs |
-| Lückenerkennung | Am Zahlungstermin; reaktive Antwort | 6–8 Wochen im Voraus; geplante Antwort |
-
-**Der spezifische Wendepunkt, den dieses Tool aufdeckt:**
-
-Ein Kundenauftrag über 100.000 $ trägt einen 70%-igen Restbetrag, der vor Versand fällig ist, geschätzt Woche 6. Die zugehörige Lieferanten-PO trägt einen 60%-igen Restbetrag, der bei Wareneingang fällig ist, geschätzt Woche 5. Anfangsbestand in Bar: 10.000 $.
-
-Nettoposition Woche 5: 10.000 $ − 30.000 $ = **−20.000 $.** Lücke vorhanden.
-Nettoposition Woche 6: −20.000 $ + 70.000 $ = **50.000 $.** Aufgelöst.
-
-Eine Monatssicht zeigt den Monat netto-positiv. Das Wochenfenster zeigt einen echten Engpass von 20.000 $ in Woche 5, der Handeln erfordert, bevor er ankommt — nicht danach.
+Das Zuordnen jeder Verbindlichkeit zu einem konkreten 7-Tage-Bucket legt Cash-Tiefs innerhalb des Monats offen, während Sie noch 6 bis 10 Wochen Zeit haben, Lieferantenbedingungen neu zu verhandeln, Kundeneinzüge zu beschleunigen oder eine revolvierende Kreditlinie in Anspruch zu nehmen.
 
 ---
 
-## Warum kurzfristige Cash-Prognose so funktioniert
+## Für wen diese 16-Wochen-rollierende Cashflow-Excel-Vorlage gedacht ist
 
-Rollierende Cashflow-Prognose — direkte Methode, kurzer Vorwärtshorizont — ist eine übliche Treasury-Disziplin, die von den meisten großen Unternehmen als Kernfunktion des Betriebs gepflegt wird. In größeren Unternehmen wird sie von dedizierten Treasury-Funktionen mit Spezialsoftware verwaltet.
+Entwickelt für operative Finanzteams und Unternehmensinhaber, die **Treasury-Forecasting nach der Direktmethode in Microsoft Excel** ohne Kosten für Enterprise-TMS-Software benötigen:
 
-Die direkte Methode funktioniert, indem tatsächlich erwartete Cash-Bewegungen — keine Buchungseinträge — bestimmten Daten zugeordnet werden. Jeder zugesagte Eingang und Abgang wird in eine Woche, eine Richtung und einen Betrag übersetzt. Der laufende Saldo an jedem Punkt spiegelt wider, was das Unternehmen tatsächlich zu halten erwartet, nicht was seine Buchhaltungsaufzeichnungen zeigen.
-
-Dieser Ansatz unterscheidet sich strukturell von:
-
-- **P&L-basierte Cash-Schätzung** — vermischt Rentabilität mit Liquidität; ein Unternehmen kann profitabel und gleichzeitig illiquide sein
-- **Bankkontostand-Verwaltung** — spiegelt nur bereits Bewegtes wider; zugesagte künftige Abgänge sind unsichtbar
-- **Monatliche AR/AP-Berichterstattung** — schließt Vor-Rechnungs-Verpflichtungen vollständig aus; systematisch blind für die operative Ebene
-
-Der Grund, warum den meisten wachsenden Unternehmen diese Sicht fehlt, ist nicht Komplexität. Es ist das Fehlen eines strukturierten Mechanismus, um operative Verpflichtungen — die über Vertrieb, Beschaffung und Finanzen verteilt leben — in einen einzigen Cash-Zeitplan zu konsolidieren.
-
-Nützlicher Referenzkontext:
-- [AICPA: Direct Method Cash Flow Forecasting](https://www.aicpa.org)
-- [AFP: Treasury Management Fundamentals](https://www.afponline.org)
+| Rolle & Suchpersona | Konkretes Operationsszenario & Vorlagen-Anwendungsfall |
+| --- | --- |
+| **Finanzmanager & Controller** *(16-Wochen-/13-Wochen-Cashflow-Forecast-Excel-Vorlage)* | Ersetzen Sie manuelle Freitag-Bankabstimmungen durch eine rollierende 16-Wochen-Direktmethoden-Liquiditätsprognose, die Cash-Puffer-Verletzungen 6–12 Wochen im Voraus meldet. |
+| **Supply-Chain- & Operations-Direktoren** *(Bestellungs-Cashflow- & Vorauszahlungs-Tracker)* | Simulieren Sie die exakte wöchentliche Cash-Auswirkung einer großen saisonalen Fabrik-PO oder einer verzögerten Versandterminierung, bevor Sie Lieferantenverträge unterzeichnen. |
+| **Inventarintensive Gründer & CEOs** *(Working-Capital- & Runway-Forecast-Tabelle)* | Pflegen Sie ein einziges zukunftsgerichtetes Dashboard der operativen Nettoliquidität über schnelle SKU-Expansion, Großhandelserfüllung und Inventaraufbauzyklen hinweg. |
+| **Beschaffungs- & Einkaufsleiter** *(Planer für Lieferantenanzahlungen & Zahlungsbedingungen)* | Bewerten Sie Forderungen nach Lieferantenvorauszahlungen (z. B. 30/70- vs. 50/50-Aufteilung) gegen die tatsächlich prognostizierte wöchentliche Cash-Verfügbarkeit. |
+| **Fractional CFOs & beratende CPAs** *(Kurzfrist-Treasury- & Turnaround-Cash-Modell)* | Stellen Sie KMU-Klienten mit knappem Working Capital oder Lender-Reporting-Covenants ein standardisiertes, prüfungsfähiges wöchentliches Cashflow-Kontrollinstrument zur Verfügung. |
 
 ---
 
-## Wie das 16-Wochen-Fenster funktioniert
+## Anwendungsfälle aus der Praxis: Working-Capital- und Liquiditätsszenarien vor der Fakturierung lösen
 
-Das 16-Wochen-Fenster gleitet jede Woche vorwärts, nicht jeden Monat. Jeder neue Eintrag wird einer bestimmten künftigen Woche zugeordnet, basierend auf geschätzten operationellen Daten und vertraglichen Zahlungsbedingungen.
+### Szenario A: Im-/Export und Großhändler mit 30/70-Fabrikvorauszahlungen
 
-| Operativer Input | Abgeleitetes Cash-Ereignis |
-|---|---|
-| Geschätztes Versanddatum + Bedingung "Zahlung vor Versand" | Kundeneingang in der Woche vor dem geschätzten Versand |
-| Geschätztes Wareneingangsdatum + Bedingung "Zahlung bei Lieferung" | Lieferantenabgang in der geschätzten Eingangswoche |
-| Rechnungsdatum + Bedingung "Net 30" | Kundeneingang ca. 4 Wochen vorwärts |
+Importeure zahlen routinemäßig 30% bei PO-Erteilung und 70% bei Frachtbrief oder Hafeneingang, während Großhandelseinzelhändler Net 30 oder Net 60 nach Lagerauslieferung zahlen. Indem offene POs und Großhandels-SOs in die **16-Wochen-Cash-Zeitachse** eingetragen werden, sieht der Controller das exakte Working-Capital-Tief von 4 bis 8 Wochen zwischen der Zahlung an die ausländische Fabrik und dem Einzug beim inländischen Händler.
 
-**Die Falle in Zahlen:**
+### Szenario B: Lohnfertiger und Sondermaschinenbauer, die Meilensteinabrechnung verfolgen
 
-Ein Unternehmen, das 10 offene Aufträge gleichzeitig verwaltet — jeder mit eigener Anzahlungsstruktur, Restzahlungs-Timing und Lieferanten-Vorauszahlungsplan — trägt jederzeit über 30 interagierende Cash-Ereignisse. Jedes Ereignis hängt von einer aktuellen operationellen Schätzung ab, um genau zu bleiben. Manuelle Konsolidierung führt bei jedem Schritt Fehler ein.
+Fertiger mit mehrstufigen Aufträgen ziehen Kunden-Abschlagszahlungen ein (z. B. 40% Anzahlung, 30% bei Teilbaugruppe, 30% vor Versand) und kaufen Rohmaterial im Voraus. Verschiebt sich ein Produktionsmeilenstein um zwei Wochen, verschiebt das Aktualisieren des voraussichtlichen Versanddatums in der Arbeitsmappe automatisch die nachgelagerten Kundenzuflüsse und zeigt, ob Rohmaterial-Verbindlichkeiten die minimale Cash-Reserve verletzen würden.
 
-Das monatliche Zurücksetzungs-Mentale-Modell genehmigt Positionen, die das rollierende Wochenfenster nicht tut. Die Berechnung ist strukturell, nicht wertend. Die Automatisierung eliminiert die Fehlerklasse vollständig.
+### Szenario C: Fractional CFOs mit wöchentlichen Cash-War-Rooms und Lender-Covenant-Reporting
 
-**Warum die Prognosezuverlässigkeit am äußeren Horizont abnimmt:** Der nahe Horizont der Wochen 1–8 ist bevölkert von Verpflichtungen, die bereits in Bewegung sind — Versanddaten und Zahlungsbedingungen, die bestätigt oder nahezu bestätigt sind. Die Wochen 9–16 hängen von operationellen Schätzungen ab, die sich materiell verschieben können, wenn Aufträge platziert oder verzögert werden. Das Modell ist am zuverlässigsten innerhalb des 6–8-Wochen-Nahhorizonts. Das äußere Fenster ist richtungsweisend nützlich für die Planung; es ist keine Garantie.
+Bei Working-Capital-Sanierungen oder saisonalen Kreditlinien-Ziehungen verlangen Banken und Führungsteams eine transparente wöchentliche Direkt-Cash-Prognose (häufig als 13-Wochen- oder 16-Wochen-rollierender Cashflow-Report angefragt). Diese Vorlage liefert Transaktions-Drilldowns, die genau zeigen, welche Kundenrechnungen und Lieferanten-POs den Netto-Cashflow der jeweiligen Woche treiben.
 
 ---
 
-## Arbeitsmappen-Logik
+## Was die Arbeitsmappe verfolgt: Mapping von Schmerzpunkt zu Lösung
 
-Die Arbeitsmappe ist um einen praktischen Cash-Planungs-Workflow organisiert:
-
-1. Geben Sie alle offenen AR, AP, Verkaufsaufträge und Bestellungen mit geschätzten Daten und Zahlungsbedingungen ein.
-2. Wenden Sie Deduplizierung an, um Bestellungen zu identifizieren und auszuschließen, die bereits in Rechnungen umgewandelt wurden.
-3. Ordnen Sie jede offene Verpflichtung ihrer erwarteten Cash-Woche und Richtung zu.
-4. Berechnen Sie den laufenden 16-Wochen-Saldo vorwärts ab der Anfangs-Cash-Position.
-5. Vergleichen Sie den projizierten Saldo jeder Woche mit der minimalen sicheren Schwelle.
-6. Markieren Sie Lückenwochen und identifizieren Sie die spezifischen Transaktionen, die jede Lücke antreiben.
-7. Bewahren Sie den Verpflichtungsdatensatz für wöchentliche rollierende Überprüfung und Teamkommunikation.
-
-Die Arbeitsmappe soll ein Entscheidungsunterstützungs- und Planungsinstrument sein. Sie ersetzt keine Buchhaltungssoftware, prüfbare Finanzaufzeichnungen oder professionelle Beratung für komplexe Finanzierungsentscheidungen.
+| Treasury- & Cash-Management-Schmerzpunkt | Häufige Suchanforderung | Eingebaute Excel-Arbeitsmappen-Lösung |
+| --- | --- | --- |
+| **Nicht fakturierte POs fehlen in Cash-Forecasts** | *Wie man offene Bestellungen in Excel-Cashflow-Forecasts einbezieht* | **Einheitliches Register offener Verbindlichkeiten:** Erfasst fakturierte AR, fakturierte AP, nicht fakturierte Verkaufsaufträge und offene Bestellungen in einer einzigen strukturierten Eingabetabelle. |
+| **Doppeltes Zählen von POs nach der Fakturierung** | *Doppelte PO- und Rechnungseinträge in der Cash-Projektion verhindern* | **Automatisierte PO-zu-Rechnung-Deduplizierung:** Identifiziert und schließt Bestellungen aus, die bereits in formelle AP-Rechnungen umgewandelt wurden, sodass jeder Dollar genau einmal gezählt wird. |
+| **Overdrafts innerhalb des Monats & überraschende Engpässe** | *Wöchentliche rollierende Cashflow-Forecast-Vorlage mit Niedrig-Cash-Alarmen* | **Konfigurierbare Schwellen-Alarm-Ebene:** Vergleicht die projizierte Wochenend-Cash mit Ihrer benutzerdefinierten minimalen sicheren Cash-Balance und hebt Verletzungswochen in Echtzeit hervor. |
+| **Veraltete Versand- & Lieferdaten** | *Dynamisches Cashflow-Modell auf Basis von Versanddaten und Zahlungsbedingungen* | **Automatisiertes Bedingung-zu-Woche-Mapping:** Übersetzt operative Daten (voraussichtliches Versanddatum, Ankunftsdatum, Rechnungsdatum) und Zahlungsbedingungen in exakte wöchentliche Cash-Buckets. |
+| **Langsame Prüfungen vor der Zusage** | *Cash-Auswirkung einer neuen Lieferantenbestellung vor dem Einkauf testen* | **Liquiditäts-Sandbox vor der Entscheidung:** Geben Sie eine geplante PO oder einen Kundenauftrag ein und sehen Sie sofort, ob die neue Zusage in 6–16 Wochen ein Cash-Defizit erzeugt. |
 
 ---
 
-## Kauf
+## Fallstudie: Monatliche Periodenrechnungs-Blindheit vs. 16-Wochen-rollierende Cash-Sichtbarkeit
 
-Verwenden Sie die vollständige Excel-Arbeitsmappe hier:
+**Unternehmensprofil:** Importeur von Konsumgütern mit $2M–$10M Jahresumsatz, operierend mit gemischten Kundenanzahlungsbedingungen, ausländischen Lieferanten-Vorauszahlungsplänen und einem schlanken Finanzteam unter einem einzigen Manager.
 
-[Kaufen Sie die vollständige Excel-Arbeitsmappe →](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+**Der operative Zusammenbruch:** Jede Woche verbrachte der Finanzmanager zwei Stunden damit, CRM-Verkaufsaufträge, Kundeneinzahlungseingänge, offene Fabrik-POs und Frachtankunftspläne über getrennte Tabellen hinweg abzugleichen. Trotz positiver monatlicher Netto-Cashflows auf dem Papier erlitt das Unternehmen zwei Notfall-Cash-Engpässe in einem einzigen Quartal — beide entdeckt weniger als 48 Stunden, bevor internationale Lieferantenüberweisungen fällig waren.
+
+### Vergleich: Getrennte AR/AP-Tabellen vs. automatisiertes 16-Wochen-Verbindlichkeiten-Modell
+
+| Treasury-Operation | Manuelle getrennte Tabellen (Vorher) | Automatisierte 16-Wochen-rollierende Cashflow-Arbeitsmappe (Nachher) |
+| --- | --- | --- |
+| **Verbindlichkeiten-Datenarchitektur** | Getrennte CRM-Verkaufsblätter, Beschaffungs-PO-Tracker und Buchhaltungs-AR/AP-Exporte | **Ein einziges einheitliches Verbindlichkeiten-Register** für AR, AP, offene SOs und offene POs mit Deduplizierung |
+| **Zeitaufwand für die wöchentliche Prognose** | ~2 Stunden manuelle VLOOKUPs und Datumsabgleiche jeden Freitag | **Unter 5 Minuten pro Woche**; das rollierende 16-Wochen-Fenster aktualisiert sich bei Datumseingabe dynamisch |
+| **Sichtbarkeit von Vorauszahlungen vor der Fakturierung** | Blind für Lieferantenanzahlungen und Meilenstein-Restbeträge, bis Lieferantenrechnungen gebucht sind | **Vollständiges Meilenstein-Mapping** über Anzahlungs-Tranchen, Zahlungen vor Versand und Lieferüberweisungen |
+| **Erkennungsfenster für Liquiditätsengpässe** | Entdeckt 24–48 Stunden vor Fälligkeit der Überweisung (erzwungene Notfallkreditlinien-Ziehungen) | **6–12 Wochen im Voraus gemeldet** durch automatisierte Alarme bei Verletzung der minimalen Cash-Schwelle |
+
+### Der exakte Wendepunkt, den diese Arbeitsmappe aufdeckt
+
+Betrachten Sie einen **$100,000-Kundenauftrag** und die zugehörige **$50,000-Lieferantenbestellung** ausgehend von einem **Anfangs-Cash-Bestand von $10,000**:
+
+* **Lieferanten-PO-Restbetrag ($30,000 Abfluss):** 60% fällig bei Wareneingang in **Woche 5**.
+* **Kunden-SO-Restbetrag ($70,000 Zufluss):** 70% fällig vor Warenausgang aus dem Lager in **Woche 6**.
+
+| Berichtsdetailtiefe | Netto-Cash-Position in Woche 5 | Netto-Cash-Position in Woche 6 | Operationale Schlussfolgerung |
+| --- | --- | --- | --- |
+| **Traditionelle monatliche Cash-Zusammenfassung** | *Versteckt in der Monatssumme* | **+$50,000 Monatsend-Cash** | Falsches Grünlicht; die Finanzen genehmigen Bedingungen, ohne den Monatsmitte-Ausfall zu sehen |
+| **16-Wochen-rollierendes Wochenmodell** | **−$20,000 Cash-Engpass** ($10K − $30K) | **+$50,000 Erholung** (−$20K + $70K) | **Meldet das $20,000-Defizit der Woche 5 fünf Wochen im Voraus**, sodass das Team die Lieferanten-Überweisungsbedingungen an den Kundeneingang anpassen kann |
 
 ---
 
-## Einschränkungen
+## Treasury-Standards hinter dem rollierenden Cash-Forecasting nach Direktmethode
 
-- **Eingabeabhängigkeit** — die Prognosegenauigkeit ist begrenzt durch die Qualität der eingegebenen Daten; veraltete Versandschätzungen oder fehlende Verpflichtungen erzeugen ohne Warnung ein falsches Gefühl von Transparenz
-- **Manuelle Aktualisierung erforderlich** — das Modell aktualisiert sich nicht automatisch; ohne konsequente wöchentliche Pflege degradiert das rollende Fenster und Lücken werden wieder unsichtbar
-- **Kein System of Record** — dies ist eine Entscheidungsunterstützungsschicht; sie ersetzt keine Buchhaltungssoftware, kein ERP und keine prüfbaren Finanzaufzeichnungen
-- **Deterministisch, nicht probabilistisch** — jedes Cash-Ereignis wird als festes Datum und fester Betrag modelliert; Zahlungsverzögerungsrisiko, FX-Bewegung und Auftragsstornierungsszenarien erfordern manuelle Überlagerung
-- **Zuverlässigkeit des äußeren Horizonts** — die Wochen 10–16 hängen von operationellen Schätzungen ab, die sich materiell verschieben können; das Modell ist am zuverlässigsten innerhalb des 6–8-Wochen-Nahhorizonts
-- **Multi-Währung nicht modelliert** — Unternehmen mit signifikanter FX-Exposition müssen Wechselkursannahmen als manuelle Überlagerung anwenden
-- **Größenkontext** — konzipiert für Unternehmen, die 5–50 gleichzeitige offene Positionen verwalten; darüber hinaus erfordert das manuelle Eingabemodell strukturelle Anpassung
+Corporate-Treasury-Teams setzen auf **kurzfristiges rollierendes Cashflow-Forecasting nach der Direktmethode**, weil periodenrechnungsbasierte Erfolgsrechnungen Rentabilität statt Cash-Solvenz messen. Schnell wachsende Produktunternehmen erwirtschaften häufig starke Buchhaltungsmargen, gehen aber aufgrund des Timings von Inventarvorauszahlungen operativer Cash aus.
+
+Die Direktmethode umgeht die Anpassungen der Periodenrechnung und mappt **100% der erwarteten Brutto-Cash-Eingänge und Brutto-Cash-Abgänge** auf konkrete wöchentliche Buckets:
+
+| Traditionelle Berichtsmethode | Strukturelle Einschränkung im Betrieb | Wie das 16-Wochen-Direktmethoden-Modell sie löst |
+| --- | --- | --- |
+| **Indirekte GuV-Cash-Schätzung** | Vermischt buchhalterischen Nettogewinn mit liquiden Bankmitteln; verbirgt Working-Capital-Spitzen innerhalb des Monats | Mappt **tatsächlich datierte Cash-Eingänge und Überweisungs-Abgänge** Woche für Woche |
+| **Tägliche Bankkonto-Kontrolle** | Rein rückwärtsgerichtet; zeigt abgewickeltes Cash und ignoriert $100K+ an zugesagten künftigen PO-Überweisungen | Projiziert **vorlaufende Cash-Bestände** über die nächsten 16 aufeinanderfolgenden Wochen |
+| **Monatliche AR-/AP-Aging-Berichte** | Schließen nicht fakturierte Bestellungen und Kundenmeilensteine vor dem Versand aus | Integrieren **Auftragsverbindlichkeiten vor der Fakturierung** neben fakturierten Forderungen und Verbindlichkeiten |
+
+**Referenzierte maßgebliche Treasury- & Cash-Management-Frameworks:**
+
+* [AICPA: Direktmethoden-Cashflow-Forecasting & Working-Capital-Management](https://www.aicpa-cima.com)
+* [Association for Financial Professionals (AFP): Standards für kurzfristiges Treasury & rollierendes Cash-Forecasting](https://www.afponline.org)
 
 ---
 
-## Über dieses Projekt
+## Wie der 16-Wochen-rollierende Horizont & das Datumsversatz-Mapping funktionieren
 
-Diese Arbeitsmappe ist Teil einer breiteren Anstrengung, komplexe operative und finanzielle Anforderungen in leichtgewichtige Tools zu übersetzen, die kleine und mittlere Organisationen tatsächlich nutzen können.
+Der 16-Wochen-Prognosehorizont rolliert Woche für Woche vorwärts. Jeder offene Auftrag oder jede Rechnung wird durch die Kombination aus ihrem **operativen Meilensteindatum** und ihrer **vertraglichen Zahlungsbedingung** einer konkreten künftigen Cash-Woche zugeordnet:
 
-Kein ERP. Kein Treasury-Software-Abonnement. Kein Custom-Development-Projekt.
+| Operativer Meilenstein-Input | Vertragliche Zahlungsbedingung | Abgeleitetes wöchentliches Cashflow-Ereignis im Modell |
+| --- | --- | --- |
+| **Voraussichtliches Versanddatum an den Kunden** | *Restbetrag fällig vor Versand* | **Cash-Zufluss (Eingang)** gemappt auf die Woche unmittelbar vor dem voraussichtlichen Versand |
+| **Voraussichtliches Wareneingangsdatum (ETA)** | *Restbetrag fällig bei Lieferung / Ankunft* | **Cash-Abfluss (Lieferantenüberweisung)** gemappt auf die voraussichtliche Lager-/Hafen-Ankunftswoche |
+| **Ausstellungsdatum der Kundenrechnung** | *Net 30-Kreditbedingung* | **Cash-Zufluss (Eingang)** gemappt 4 Wochen nach dem Rechnungsdatum |
 
-Nur klare Geschäftslogik, strukturierte Daten und wiederholbare Entscheidungsunterstützung — geliefert in Software, die Ihr Team bereits hat.
+**Warum sich die Prognosegenauigkeit zwischen Nahhorizont (Wochen 1–8) und äußerem Horizont (Wochen 9–16) aufteilt:**
 
-Wenn Ihre Operation Cash-Management, Beschaffungszyklen oder Kundenabrechnungsstrukturen umfasst, die derzeit im Kopf von jemandem oder in einer getrennten Tabelle leben, [sehen Sie, was sonst verfügbar ist →](https://www.theseusworkshop.com)
+* **Wochen 1–8 (Ausführungsfenster mit hoher Konfidenz):** Getrieben von bestätigten Rechnungen, fixierten Schiffsplänen und aktiven Bestellungen, die sich bereits in Produktion befinden. Verwendet für verbindliche Zahlungsplanung, Überweisungsfreigaben und Entscheidungen über Kreditlinien-Ziehungen.
+* **Wochen 9–16 (Strategisches Planungs- & Beschaffungsfenster):** Getrieben von geschätzten Produktionsvorlaufzeiten und Pipeline-Verkaufsaufträgen. Verwendet für Stresstests, ob neue Lieferanten-POs aus dem internen Cashflow finanziert werden können, bevor Verträge unterzeichnet werden.
+
+---
+
+## Schnellstart-Tutorial: Ihre 16-Wochen-rollierende Cashflow-Prognose in 7 Schritten bauen
+
+Folgen Sie diesem Schritt-für-Schritt-Workflow, um Ihr Finanz- und Operationsteam von reaktiven Bankkonto-Kontrollen zu proaktivem 16-Wochen-Liquiditätsmanagement zu führen:
+
+1. **Verbindlichkeitsszenarien in der interaktiven Browser-Demo testen**
+Öffnen Sie den [Interaktiven 16-Wochen-rollierenden Cashflow-Websimulator](https://hyvoid.github.io/rolling-cashflow-forecast/), um zu erkunden, wie offene POs, Kundenanzahlungen und Versandverzögerungen wöchentliche Cash-Bestände in Echtzeit verschieben.
+2. **Anfangs-Cash-Bestand und minimalen sicheren Cash-Puffer konfigurieren**
+Geben Sie Ihren aktuellen operativen Bankbestand ein, definieren Sie Ihr Startdatum (Montag) der Prognose und legen Sie die **Minimale Sichere Cash-Schwelle** Ihres Unternehmens fest (z. B. $25,000 oder 1 Monat fixer Lohn-/Opex-Kosten).
+3. **Fakturierte Debitoren (AR) und Kreditoren (AP) erfassen**
+Geben Sie ausstehende Kundenrechnungen und Lieferantenrechnungen mit ihren vertraglichen Fälligkeitsdaten ein, um Ihre Baseline-Cash-Zeitachse nach der Fakturierung zu etablieren.
+4. **Nicht fakturierte Verkaufsaufträge (SO) und offene Bestellungen (PO) eingeben**
+Halten Sie bestätigte Kundenaufträge und aktive Lieferanten-POs nebst Anzahlungsprozenten, Restbetragsprozenten, voraussichtlichen Versand-/Ankunftsdaten und Zahlungsbedingungen fest.
+5. **Automatisierte PO-zu-Rechnung-Deduplizierung ausführen**
+Markieren oder verknüpfen Sie Bestellungen, die bereits von Lieferanten fakturiert wurden, damit die Deduplizierungs-Engine sie aus den offenen Verbindlichkeiten ausschließt und Doppelzählungen verhindert.
+6. **Wöchentliche Schwellen-Verletzungs-Alarme prüfen und Cash-Tiefs diagnostizieren**
+Prüfen Sie die 16-Wochen-Cash-Zeitachse auf jede Woche, die unter Ihren minimalen Puffer fällt, und filtern Sie dann die Verbindlichkeitstabelle nach dieser Wochennummer, um die exakte Lieferanten-PO oder verzögerte Kundeneinziehung zu identifizieren, die die Lücke verursacht.
+7. **Ihre wöchentliche Cash-Prüfung mit der wiederverwendbaren Excel-Arbeitsmappe standardisieren**
+Sobald Sie die Logik in der Webvorschau für eine Einzelsitzung getestet haben, **[laden Sie die vollständige, wiederverwendbare 16-Wochen-rollierende Cashflow-Excel-Vorlage herunter](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)**, um Ihre laufenden Unternehmensdaten zu speichern, das Gegenparteien-Tracking anzupassen und Ihre wöchentliche 5-Minuten-Liquiditätsprüfung offline in Microsoft Excel durchzuführen.
+
+*Haftungsausschluss: Diese Arbeitsmappe ist ein operatives Cash-Planungs- und Entscheidungsunterstützungsmodell. Sie ergänzt — sie ersetzt nicht — formelle GAAP/IFRS-Buchhaltungssoftware, geprüfte Finanzabschlüsse sowie lizenzierte Treasury- oder Finanzierungsberatung.*
+
+---
+
+## Die vollständige Excel-Vorlage herunterladen
+
+Bereit, überraschende Engpässe am Zahlungstermin zu beseitigen und Ihre AR-, AP- und offenen Auftragsverbindlichkeiten in einer rollierenden Zeitachse zu vereinen?
+
+👉 **[Holen Sie sich die vollständige 16-Wochen-rollierende Cashflow-Forecast-Excel-Arbeitsmappe](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)**
+
+---
+
+## Technischer Umfang & operationelle Einschränkungen
+
+* **Abhängigkeit von der Datenaktualität:** Die Prognosegenauigkeit hängt von aktuellen operativen Schätzungen ab; nicht erfasste Lieferanten-POs oder veraltete Frachtankunftsdaten unterschätzen oder verschieben wöchentliche Cash-Abflüsse.
+* **Wöchentliche rollierende Pflegekadenz:** Entwickelt für eine 5-Minuten-Wochenaktualisierung (Anfangs-Cash aktualisieren, das Startdatum vorrollen und verschobene Versand-ETAs anpassen).
+* **Entscheidungsunterstützungsebene (kein Buchhaltungs-Hauptbuch):** Für zukunftsorientierte Liquiditätsplanung gebaut; ersetzt keine ERP-Systeme, keine Buchhaltungssoftware mit doppelter Buchführung und keine gesetzlichen Steuerunterlagen.
+* **Deterministisches Datumsmapping:** Modelliert jede Verbindlichkeitstranche mit einem konkreten Zieldatum und Betrag; probabilistische Zahlungsverzugs-Abschläge oder Stresstests für Auftragsstornierungen erfordern manuelle Datums-/Betragsüberschreibungen.
+* **Abweichung am äußeren Horizont (Wochen 9–16):** Die Wochen 1–8 spiegeln nahezu fixierte Verbindlichkeiten wider, während die Wochen 9–16 operative Schätzungen darstellen, die Verschiebungen der Lieferketten-Vorlaufzeiten unterliegen.
+* **Architektur mit einer einzigen Basiswährung:** Lieferanten-POs in Fremdwährungen (z. B. USD vs. EUR/CNY) sollten zu Ihrem budgetierten oder forward-gesicherten Wechselkurs in der Basiswährung erfasst werden.
+* **Empfohlene operationelle Skala:** Optimiert für KMU, die pro rollierendem Zyklus aktiv **5 bis 50 gleichzeitige offene Aufträge/POs** in Microsoft Excel verwalten.
+
+---
+
+## Über Theseus Workshop
+
+Wir erstellen praxisnahe, prüfungsfähige Finanz- und Operations-Microsoft-Excel-Modelle für Großhandels-, Fertigungs- und operator-geführte Unternehmen, die institutionelle Treasury- und Buchhaltungskontrolle in Standard-Tabellenkalkulationen benötigen.
+
+Jede Arbeitsmappe verwendet transparente native Excel-Formeln ohne Black-Box-Makros und gibt Finanz- und Operationsteams vollständige Einblick in jede wöchentliche Cash-Berechnung.
+
+Lösen Sie komplexe Working-Capital-, Inventarbeschaffungs- oder Kapitalallokationsprobleme in Tabellenkalkulationen? **[Entdecken Sie unsere vollständige Kollektion von Finanz- & Operations-Excel-Vorlagen bei Theseus Workshop →](https://www.theseusworkshop.com)**
 
 ---
 
 ## Lizenz
 
-Vertrieben unter der [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+Vertrieben unter der [Apache License 2.0 Open Source License](https://www.apache.org/licenses/LICENSE-2.0).
+
