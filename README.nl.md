@@ -1,243 +1,291 @@
 [ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
-# Voorkom liquiditeitstekorten voordat ze de betaaldatum bereiken
+
+# Excel-sjabloon voor een 16-weekse doorlopende kasstroomprognose: liquiditeitsplanner volgens de directe methode, tracker van PO-verbintenissen & werkkapitaalmodel
 
 <div align="center">
 
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Microsoft%20Excel-217346)
-![Focus](https://img.shields.io/badge/focus-Operations--Stage%20Business-orange)
+![Focus](https://img.shields.io/badge/focus-Working%20Capital%20%26%20Treasury-orange)
 
-**Ontworpen voor bedrijven in consume-goederen, groothandel en productie die toegezegde kasbewegingen, vooruitbetalingsverplichtingen en rollende liquiditeit moeten volgen voordat een tekort ontstaat.**
+**Een spreadsheet voor een 16-weekse doorlopende kasstroomprognose volgens de directe methode, gebouwd in Microsoft Excel voor groothandel-, import/export-, e-commercevoorraad- en productiebedrijven die openstaande inkooporders (PO's), leveranciersvooruitbetalingen, klantdeposito's en kortetermijnwerkkapitaal beheren.**
 
-[Live preview](https://hyvoid.github.io/rolling-cashflow-forecast/) · [Koop de volledige Excel-versie](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+[Bekijk de demo van de interactieve simulator voor de 16-weekse doorlopende kasstroom](https://hyvoid.github.io/rolling-cashflow-forecast/) ·
+
+[Download het volledige Excel-werkboek voor de 16-weekse doorlopende kasstroomprognose](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
 
 </div>
 
-Volg open orderkasverplichtingen, detecteer liquiditeitsgaten weken vooruit en behoud één vooruitkijkende bron van waarheid voor de kortetermijnkasvatbaarheid.
+Het **16-Week Rolling Cash Flow Forecast Workbook** is een geautomatiseerde **Microsoft Excel-planner voor kortetermijnliquiditeit** en een **kas-tracker voor open verbintenissen**. Het gaat verder dan standaard **13-weekse kasstroommodellen** door de volledige levertijden van 110 dagen voor voorraad en productie te dekken, en consolideert **debiteuren (AR)**, **crediteuren (AP)**, **niet-gefactureerde verkooporders (SO)** en **toegezegde inkooporders (PO)** in één wekelijkse kas-tijdlijn — met signalering van werkkapitaaltekorten en doorbraken van de minimale cashbuffer weken vóór de vervaldatums van betalingen.
 
 ---
 
-## Snelle preview
+## Visuele preview: 16-weekse kas-tijdlijn & drempelwaarschuwingsdashboard
 
-<img width="1672" height="941" alt="ChatGPT Image May 25, 2026, 03_53_03 PM" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
+<img width="1672" height="941" alt="16-Week Rolling Cash Flow Forecast Excel Template showing weekly cash inflows, supplier PO prepayments, net liquidity balance, and shortfall alerts" src="https://github.com/user-attachments/assets/d43699bc-4a15-470c-901e-7b372c953861" />
 
-> Bekijk de interactieve werkboekpreview: [16-weeks kasstromendemo](https://hyvoid.github.io/rolling-cashflow-forecast/)
+> Test de wekelijkse verbintenismapping en de drempelwaarschuwingen voor liquiditeit in je browser: [Interactieve demo van de 16-weekse kasstroomprognose volgens de directe methode](https://hyvoid.github.io/rolling-cashflow-forecast/)
 
 ---
 
-## Waarom dit bestaat
+## Waarom accrual-boekhouding geen kortetermijnkastekorten voorkomt
 
-De meeste kastekorten in groeiende bedrijven worden niet veroorzaakt door onrendabele operaties.
+Winstgevende groothandel-, productie- en fysieke productbedrijven ondervinden routinematig acute liquiditeitsproblemen tijdens groeifasen. Deze kastekorten ontstaan doordat **klantdeposito's**, **mijlpalenfacturering over de voortgang**, **contractuele leveranciersvooruitbetalingen** en **gestaffelde Net 30/60/90-betaalvoorwaarden** weken vóór het moment plaatsvinden waarop een boekhoudkundige factuur ooit op de algemene grootboek wordt geboekt.
 
-Ze gebeuren meestal omdat vooruitbetalingen van klanten, mijlpaalonvangsten, toegezegde inkooporders en gestaffelde betalingstermijnen moeilijk handmatig te consolideren zijn — en standaard boekhoudkundige registraties structureel blind voor zijn tot er een factuur wordt gesteld.
+**De reactieve workflow rond banksaldo & AR/AP (hoog risico op wanbetaling):**
 
-Het risico is simpel:
+```text
+Supplier wire due date arrives
+-> Finance checks current bank balance and billed AP aging
+-> Unbilled PO prepayments and freight commitments overlooked
+-> Working capital shortfall discovered 48 hours before wire deadline
 
 ```
-Payment due date arrives
--> Manual bank balance check
--> Prior commitments missed
--> Shortfall discovered at the wire
+
+**De proactieve 16-weekse workflow voor verbintenissenprognoses (controle vóór de beslissing):**
+
+```text
+New customer order or supplier Purchase Order (PO) proposed
+-> Prepayment and balance milestones logged once in the commitment ledger
+-> 16-week rolling cash flow timeline updates automatically
+-> Liquidity gap and minimum buffer breach flagged 6–12 weeks in advance
+
 ```
 
-Dit werkboek is ontworpen om de workflow te veranderen:
-
-```
-New order or supplier PO considered
--> Commitment entered once
--> 16-week cash timeline updated automatically
--> Liquidity gap flagged before it becomes a crisis
-```
-
-Het commerciële probleem is niet alleen kasbeheer. Het is operationele zichtbaarheid. Financiële teams en operators moeten weten of het bedrijf zijn volgende verplichting kan dekken — voordat betalingstermijnen worden overeengekomen.
+Financiële managers, controllers en operationele leidinggevenden hebben zicht op liquiditeit nodig vóórdat beslissingen vallen. Voordat een leveranciersinkooporder wordt ondertekend of Net 60-voorwaarden aan een groothandelafnemer worden verleend, moeten operators verifiëren dat het wekelijkse cash-dal boven de minimale operationele kasreserve van het bedrijf blijft.
 
 ---
 
-## Drie kasvallen die groeiende bedrijven te pakken krijgen
+## De bedrijfslogica & methodologie: verbintenissenprognoses volgens de directe methode
 
-### Val 1 — Maandoverzichten worden verkeerd gelezen als een liquiditeitsbeeld
+Dit werkboek lost het **probleem van werkkapitaalblindheid vóór facturatie** op door **doorlopende kasstroomprognoses volgens de directe methode** te combineren met **ontdubbeling van verbintenissen van order tot factuur**.
 
-Standaard AR/AP-rapportages weerspiegelen wat is gefactureerd. Ze weerspiegelen niet wat is toegezegd.
+### Het commerciële probleem: de timingkloof tussen accrual en kas in fysieke toeleveringsketens
 
-Een bedrijf dat 80.000 dollar aan bevestigde klantdeposito's en 60.000 dollar aan contractuele leveranciersvooruitbetalingen houdt die volgende maand vervallen, toont geen van beide in zijn resultatenrekening tot de goederen bewegen en facturen worden gesteld. Het financiële team ziet vandaag een gezond banksaldo. Het komende tekort is onzichtbaar.
+Standaard boekhoudsoftware (QuickBooks, Xero, NetSuite GL) erkent financiële gebeurtenissen pas wanneer een **verkoopfactuur** of **inkoopfactuur** wordt uitgegeven. In productie-, groothandelsdistributie- en importactiviteiten is het geld echter al juridisch toegezegd op het **orderniveau**:
 
-Financiële teams die kas beheren vanuit maandoverzichten werken routineel met een beeld dat structureel vier tot zes weken achter de werkelijkheid loopt. Het mentale model voelt compleet; de data zijn dat niet.
+1. **Kasuitstromen bij inkoop:** Een fabriek eist een aanbetaling van 30% bij het uitgeven van de inkooporder (PO) en een saldo van 70% bij de vrachtbrief (B/L) of de aankomst in het magazijn — weken voordat een formele AP-inkoopfactuur wordt geboekt.
+2. **Kasinstromen uit verkoop:** Een B2B-klant betaalt een aanbetaling van 25% bij bevestiging van de verkooporder (SO) en de resterende 75% vóór verzending of op basis van Net 30/60-voorwaarden na levering.
+3. **Waarom 16 weken beter is dan standaard 13-weekse modellen:** Een standaard 13-weekse (90-daagse) kasprognose voor bedrijven eindigt precies vóórdat een productierun van 60 dagen plus 30 dagen zeetransport plus de incasso van de klant op Net 30-basis is afgerond. Door het doorlopende venster uit te breiden naar **16 weken (112 dagen)** wordt de volledige kasconversiecyclus vastgelegd, van de eerste PO-aanbetaling tot de laatste klantincasso.
 
-### Val 2 — Vooruitbetalingen en inkooporders worden bijgehouden in gescheiden systemen
+### De kernmethodologie: deterministische kasmapping in drie fasen
 
-Wanneer hetzelfde bedrijf maandag een aanbetaling van 30% van een klant ontvangt en donderdag een leveranciersvooruitbetaling van 40% doet, beïnvloeden beide transacties dezelfde kaspool — maar ze leven doorgaans in verschillende systemen, verschillende spreadsheets of verschillende teams.
+In plaats van kas te projecteren op basis van gemiddelden uit de omzetregel van de P&L, voert het werkboek een deterministische berekening in drie fasen uit over een schuivend venster van 16 weken ($t \in [1, 16]$):
 
-Operaties die gescheiden bijhouding voeren voor verkoopverplichtingen en inkoopverplichtingen — een natuurlijke workflowverdeling — zien systematisch niet de nettokaspositie. De regelgeving erkent die operationele grens niet. De bankrekening evenmin.
+1. **Ontdubbelingsengine van verbintenis naar factuur:**
 
-### Val 3 — Gaten worden ontdekt op de betaaldatum
+$$\text{Active Cash Events} = \{ \text{Billed AR} \} \cup \{ \text{Billed AP} \} \cup \{ \text{Open SOs} \setminus \text{Invoiced SOs} \} \cup \{ \text{Open POs} \setminus \text{Billed POs} \}$$
 
-Handmatige verificatie gebeurt doorgaans wanneer een betaling vervalt of wanneer iemand de bankrekening bekijkt. Tegen de tijd dat een gat wordt geïdentificeerd, is het venster voor actie gesloten. Reactieve antwoorden — noodkredieten, heronderhandelingen met leveranciers, uitgestelde loonbetalingen — dragen echte kosten en echte relatieschade.
 
-Onderschepping vóór het gat vereist dat liquiditeitsrisico weken voor de vervaldatum van de verplichting zichtbaar is — wat vereist dat alle open verplichtingen actueel zijn en alle timingberekeningen automatisch lopen op het moment van planning.
 
-Het gat zit meestal verborgen in de relatie tussen:
+*Bedrijfseffect:* Zodra een inkooporder in je boekhoudsysteem is omgezet in een formele leveranciersfactuur, sluit de ontdubbelingsvlag de oorspronkelijke PO-regel uit, zodat de kasuitstroom nooit dubbel wordt meegeteld.
+2. **Vertaling van mijlpalen naar datumoffsets:**
+Elke actieve verbintenis wordt opgesplitst in discrete kasfasen (bijv. aanbetalingstranche + saldostranche) die op basis van operationele triggerdatums (orderdatum, geschatte verzenddatum, geschatte aankomstdatum of factuurdatum) plus contractuele betaalvoorwaarden ($\Delta \text{Days}$) aan doelweken op de kalender worden toegewezen.
+3. **Evaluatie van doorlopende wekelijkse liquiditeit & bufferdoorbraken:**
 
-- openingskassaldo
-- timing van ontvangst van deposito's en vooruitbetalingen
-- ontvangstdatums van klantsaldi
-- vervaldatums van leveranciersbetalingen
-- contractuele betalingstermijnen
-- ordervolume en groeisnelheid
+$$\text{Ending Cash}_{w} = \text{Opening Cash}_{w} + \sum \text{Committed Inflows}_{w} - \sum \text{Committed Outflows}_{w}$$
 
-Daarom brengt handmatige afstemming het probleem vaak te laat aan het licht — of mist het volledig.
 
----
+$$\text{Liquidity Variance}_{w} = \text{Ending Cash}_{w} - \text{Minimum Safe Cash Threshold}$$
 
-## Voor wie dit tool is
 
-| Gebruiker | Praktisch gebruiksscenario |
-|---|---|
-| Financiële managers | Liquiditeitsgaten 6–16 weken vooruit identificeren voordat ze crises worden |
-| Operationele managers | De kasimpact van een nieuwe order of leveranciers-PO begrijpen voordat wordt toegezegd |
-| Oprichters en CEO's | Één vooruitkijkend beeld van kasvatbaarheid behouden naarmate het bedrijf schaalt |
-| Inkoopteams | Vooruitbetalings-eisen afwegen tegen werkelijk beschikbare liquiditeit |
-| Externe accountants | Kortetermijnkasadvies geven zonder een model vanaf nul te bouwen |
 
-Het best geschikt voor bedrijven met gemengde klantvooruitbetalings- en leveranciersvooruitbetalingsstructuren, waar treasurysoftware te kostbaar is maar handmatige benaderingen niet meer schalen.
+*Bedrijfseffect:* Elke week waarin $\text{Ending Cash}_{w} < \text{Minimum Safe Cash Threshold}$ geldt, activeert onmiddellijk een visuele waarschuwing en isoleert de exacte PO of de vertraagde AR-regel die het cash-dal in het werkkapitaal veroorzaakt.
 
 ---
 
-## Wat het werkboek doet
+## Drie werkkapitaalvalkuilen in handmatige kasstroomspreadsheets
 
-### Loggen van open verplichtingen
-Één datainvoerpunt voor alle AR, AP, open verkooporders en open inkooporders. Teams voeren basisinformatie over verplichting en timing eenmaal in; de berekeningen van de kastijdlijn lopen automatisch op de achtergrond.
+### Valkuil 1: Vertrouwen op maandelijkse P&L- en gefactureerde AR/AP-verouderingsrapportages voor liquiditeit
 
-### 16-weeks kastijdlijn
-Automatische mapping van elke open verplichting naar een specifieke week en kasrichting. Het rollende venster werkt elke week bij naarmate nieuwe invoeren worden toegevoegd en vorige weken afsluiten.
+Standaard verouderingsrapportages voor debiteuren en crediteuren tonen alleen **gefactureerde transacties**.
 
-### Liquiditeitsstatus vóór de beslissing
-Het geprojecteerde kassaldo van elke week is zichtbaar voordat een nieuwe order wordt geaccepteerd of een nieuwe leveranciersvoorwaarde wordt overeengekomen. Geen handmatig kruisverwijzen. Geen ontdekking op de betaaldag.
+Denk aan een importeur die $80,000 aan niet-gefactureerde klantorderdeposito's aanhoudt en volgende maand wordt geconfronteerd met $60,000 aan contractuele fabriekssaldobetalingen bij de aankomst van de container. Geen van beide verplichtingen verschijnt op de P&L of in het standaard AP-verouderingsrapport totdat de voorraad is aangekomen en de leveranciersfacturen zijn ingevoerd. Wie de wekelijkse treasury beheert op basis van maandelijkse accrualoverzichten, blijft met het financiële team vier tot zes weken achter de werkelijke kasverbintenissen aan.
 
-### Deduplicatielogica
-Inkooporders die al naar facturen zijn geconverteerd worden automatisch geïdentificeerd en uitgesloten — zodat elke verwachte kasbeweging precies één keer wordt geteld en het beeld van open verplichtingen schoon blijft.
+### Valkuil 2: Gescheiden tracking tussen verkooporders (CRM) en inkooporders (inkoop)
 
-### Drempellaag voor waarschuwingen
-Een minimaal veilig kassaldo wordt door het bedrijf geconfigureerd. Het model benadrukt welke weken de drempel doorbreken en welke specifieke transacties elk gat aandrijven — teams krijgen een diagnose op transactieniveau, niet alleen een rode vlag.
+Wanneer het verkoopteam maandag een klantdeposito van 30% accepteert en het inkoopteam donderdag een leveranciersvooruitbetaling van 40% toezegt, putten beide acties uit dezelfde operationele bankrekening. Toch leven verkoopverbintenissen bij de meeste mkb-bedrijven in een CRM of orderblad, terwijl leveranciers-PO's in een aparte inkooptracker staan.
 
-### Auditklare structuur
-Elke invoer is vanaf dag één gestructureerd en traceerbaar. Het volledige 16-weeks verplichtingsrecord kan worden gefilterd op richting, tegenpartij of week en bekeken zonder nabewerking.
+Het bijhouden van losse spreadsheets voor klantinstromen en leveranciersuitstromen verhindert dat operators de **netto wekelijkse kaspositie** zien wanneer leverdatums zelfs maar één week verschuiven.
 
----
+### Valkuil 3: Cash-dalen binnen de maand die verborgen zitten in positieve maandtotalen
 
-## Voorbeeldscenario
+Een maandelijks kasstroomoverzicht kan op maandafsluiting een gezond positief netsaldotonen, terwijl zich erin een fatale meerdaagse roodstand verbergt in week 2 of week 3.
 
-**Bedrijfsprofiel:** Importeur van consume-goederen. Gemengde klantvooruitbetalingsvoorwaarden en leveranciersvooruitbetalingsvereisten. Één financiële functie.
+Wekelijkse kastekorten ontstaan uit de timingmismatch tussen zes operationele variabelen:
 
-**Het probleem:** Elke week kruist de financiële manager handmatig open verkooporders, openstaande klantdeposito's, hangende leveranciersfacturen en verwachte goedsonvangstdatums om beschikbare kas te schatten. Klantverplichtingen worden bijgehouden in de CRM. Leveranciersverplichtingen worden bijgehouden in het inkoopblad. Beiden afstemmen tot een nettokaspositie kost twee uur en levert een beeld op dat al een week oud is.
+* Openingsaldo van de operationele bankrekening
+* Ontvangstdatums van klantdeposito's en mijlpalen
+* Incassovoorwaarden voor het laatste klantsaldo (bijv. Vóór verzending vs. Net 30)
+* Datums van leveranciers-PO-vooruitbetalingen en overboekingen bij goederenontvangst
+* Uitgaven voor vracht, invoerrechten en douaneafhandeling
+* Versnelling van ordervolumes tijdens piekseizoenopbouwen
 
-Over een kwartaal van operaties werden twee liquiditeitsgaten geïdentificeerd — beide binnen 48 uur na de betaaldatum.
-
-| | Voor | Na |
-|---|---|---|
-| Verplichtingsstructuur | Twee gescheiden bladen, één per team | Één uniform werkboek |
-| Wekelijkse kascontroletijd | ~2 uur over alle open posities | Minder dan 5 minuten per week |
-| Consolidatie van vooruitbetalingen | Handmatige kruisverwijzing | Automatisch over AR, AP, verkooporders, PO's |
-| Gatersontdekking | Op de betaaldatum; reactief antwoord | 6–8 weken vooruit; gepland antwoord |
-
-**Het specifieke keerpunt dat deze tool aan het licht brengt:**
-
-Een klantorder van 100.000 dollar draagt een saldo van 70% dat vóór verzending vervalt, geschat week 6. De gerelateerde leveranciers-PO draagt een saldo van 60% dat vervalt bij ontvangst van de goederen, geschat week 5. Openingskassaldo: 10.000 dollar.
-
-Netto positie week 5: 10.000 − 30.000 = **−20.000.** Er is een gat.
-Netto positie week 6: −20.000 + 70.000 = **50.000.** Opgelost.
-
-Een maandbeeld laat de maand netto-positief zien. Het weekvenster laat een echt tekort van 20.000 in week 5 zien dat actie vereist voordat het arriveert — niet erna.
+Door elke verbintenis toe te wijzen aan een specifieke emmer van 7 dagen komen cash-dalen binnen de maand bloot te liggen, terwijl je nog 6 tot 10 weken hebt om over leveranciersvoorwaarden te onderhandelen, klantincasso's te versnellen of een doorlopend krediet aan te boren.
 
 ---
 
-## Waarom kortetermijnkasprognoses op deze manier werken
+## Voor wie dit Excel-sjabloon voor een 16-weekse doorlopende kasstroomprognose bedoeld is
 
-Rollende kasstroomprognoses — directe methode, korte vooruitblikkende horizon — zijn een standaard treasurydiscipline die door de meeste grote bedrijven als kernoperationele functie wordt onderhouden. In grotere bedrijven wordt het beheerd door dedicated treasuryfuncties met specialistische software.
+Ontworpen voor operationele financiële teams en bedrijfseigenaren die **treasuryprognoses volgens de directe methode in Microsoft Excel** nodig hebben zonder de kosten van enterprise-TMS-software:
 
-De directe methode werkt door werkelijke verwachte kasbewegingen — geen boekhoudkundige boekingen — toe te wijzen aan specifieke datums. Elke toegezegde in- en uitstroom wordt vertaald naar een week, een richting en een bedrag. Het lopende saldo op elk moment weerspiegelt wat het bedrijf werkelijk verwacht te houden, niet wat zijn boekhoudkundige registraties laten zien.
-
-Deze benadering is structureel onderscheiden van:
-
-- **Op P&L gebaseerde kasschatting** — verwart rentabiliteit met liquiditeit; een bedrijf kan tegelijkertijd rendabel en illiquide zijn
-- **Banksaldobeheer** — weerspiegelt alleen wat al is bewogen; toegezegde toekomstige uitstromen zijn onzichtbaar
-- **Maandelijkse AR/AP-rapportage** — sluit voorfactuurverplichtingen volledig uit; systematisch blind voor de operationele laag
-
-De reden dat de meeste groeiende bedrijven dit beeld missen is niet complexiteit. Het is de afwezigheid van een gestructureerd mechanisme om operationele verplichtingen — die over verkoop, inkoop en financiën verdeeld leven — te consolideren in één kastijdlijn.
-
-Nuttige referentiecontext:
-- [AICPA: Direct Method Cash Flow Forecasting](https://www.aicpa.org)
-- [AFP: Treasury Management Fundamentals](https://www.afponline.org)
+| Rol & zoekpersoon | Specifiek operationeel scenario & sjabloonuse case |
+| --- | --- |
+| **Financiële managers & controllers** *(Excel-sjabloon voor 16-weekse / 13-weekse kasstroomprognose)* | Vervang handmatige bankafstemmingen op vrijdag door een doorlopende 16-weekse liquiditeitsprognose volgens de directe methode die bufferdoorbraken 6–12 weken van tevoren signaleert. |
+| **Supply chain- & operationeel directeuren** *(kasstroom van inkooporders & tracker voor vooruitbetalingen)* | Simuleer de exacte wekelijkse kasimpact van het plaatsen van een grote seizoens-PO bij een fabriek of het uitstellen van een verzenddatum vóór het ondertekenen van leverancierscontracten. |
+| **Oprichters & CEO's met zware voorraad** *(werkkapitaal- & runwayprognose-spreadsheet)* | Onderhoud één vooruitkijkend dashboard van de netto operationele liquiditeit tijdens snelle SKU-uitbreiding, groothandelsafwikkeling en voorraadopbouwcycli. |
+| **Inkoop- & aanschafteamleads** *(planner voor leveranciersaanbetalingen & betaalvoorwaarden)* | Weeg eisen voor leveranciersvooruitbetalingen (bijv. 30/70- vs. 50/50-splitsvoorwaarden) af tegen de werkelijk geprojecteerde wekelijkse kasbeschikbaarheid. |
+| **Interim-CFO's & adviserende CPA's** *(kortetermijntreasury- & turnaroundkasmodel)* | Zet een gestandaardiseerd, audit-klaar wekelijks kasstroombeheersinstrument in voor mkb-klanten met krap werkkapitaal of rapportagecovenants van kredietverstrekkers. |
 
 ---
 
-## Hoe het 16-weeks venster werkt
+## Praktijkgevallen: scenario's rond werkkapitaal & liquiditeit vóór facturatie oplossen
 
-Het 16-weeks venster schuift elke week vooruit, niet elke maand. Elke nieuwe invoer wordt toegewezen aan een specifieke toekomstige week op basis van geschatte operationele datums en contractuele betalingstermijnen.
+### Scenario A: Import-/export- & groothandelsdistributeurs met 30/70-fabrieksvooruitbetalingen
 
-| Operationele invoer | Afgeleide kasgebeurtenis |
-|---|---|
-| Geschatte verzenddatum + voorwaarde "betaling vóór verzending" | Klantontvangst in de week vóór de geschatte verzending |
-| Geschatte goedsonvangstdatum + voorwaarde "betaling bij levering" | Leveranciersuitstroom in de geschatte ontvangstweek |
-| Factuurdatum + voorwaarde "Net 30" | Klantontvangst ongeveer 4 weken vooruit |
+Importeurs betalen routinematig 30% bij het plaatsen van de PO en 70% bij de vrachtbrief of aankomst in de haven, terwijl groothandel- en retailafnemers Net 30 of Net 60 betalen na magazijnlevering. Door open PO's en groothandel-SO's vast te leggen in de **16-weekse kas-tijdlijn** ziet de controller het exacte werkkapitaal-cash-dal van 4 tot 8 weken tussen het betalen van de overzeese fabriek en het incasseren bij de binnenlandse retailer.
 
-**De val in cijfers:**
+### Scenario B: Contractfabrikanten & bouwers van maatwerkapparatuur die mijlpalenfacturering volgen
 
-Een bedrijf dat 10 open orders tegelijk runt — elk met eigen stortingsstructuur, saldobetalingstiming en leveranciersvooruitbetalingsschema — draagt op elk moment meer dan 30 interacterende kasgebeurtenissen. Elke gebeurtenis hangt af van een actuele operationele schatting om accuraat te blijven. Handmatige consolidatie introduceert bij elke stap fouten.
+Fabrikanten die meerfasenopdrachten draaien, incasseren voortgangsbetalingen van klanten (bijv. 40% aanbetaling, 30% bij subassemblage, 30% vóór verzending) terwijl ze vooraf grondstoffen inkopen. Wanneer een productiemijlpaal twee weken opschuift, verschuift het bijwerken van de geschatte verzenddatum in het werkboek automatisch de stroomafwaartse kasinstroom van de klant en wordt zichtbaar of de betalingen voor grondstoffen de minimale kasreserve zullen doorbreken.
 
-Het maandelijkse reset-mentale model keurt posities goed die het rollende weekvenster niet goedkeurt. De berekening is structureel, niet subjectief. Automatisering elimineert die foutklasse volledig.
+### Scenario C: Interim-CFO's die wekelijkse kaswar-rooms draaien & covenantrapportage voor kredietverstrekkers
 
-**Waarom de betrouwbaarheid van de prognose aan de buitenhorizon vervaagt:** De nabije horizon van weken 1–8 is bevolkt met verplichtingen die al in beweging zijn — verzenddatums en betalingstermijnen die bevestigd of bijna bevestigd zijn. Weken 9–16 hangen af van operationele schattingen die materieel kunnen verschuiven naarmate orders worden geplaatst of vertraagd. Het model is het meest betrouwbaar binnen de 6–8 weekse nabije horizon. Het buitenvenster is directioneel nuttig voor planning; het is geen garantie.
+Tijdens werkkapitaalturnarounds of seizoensopnames op de kredietlijn eisen banken en managementteams een transparante wekelijkse directe kasprognose (vaak gevraagd als een rapport van 13 of 16 weken doorlopende kasstroom). Dit sjabloon biedt drill-downs op transactieniveau die precies laten zien welke klantfacturen en leveranciers-PO's de netto kasstroom van elke week aandrijven.
 
 ---
 
-## Werkboeklogica
+## Wat het werkboek bijhoudt: mapping van pijnpunt naar oplossing
 
-Het werkboek is georganiseerd rond een praktische kasplanningworkflow:
-
-1. Voer alle open AR, AP, verkooporders en inkooporders in met geschatte datums en betalingstermijnen.
-2. Pas deduplicatie toe om inkooporders die al naar facturen zijn geconverteerd te identificeren en uit te sluiten.
-3. Wijs elke open verplichting toe aan zijn verwachte kasweek en richting.
-4. Bereken het lopende 16-weeks saldo vooruit vanaf de openingskaspositie.
-5. Vergelijk het geprojecteerde saldo van elke week met de minimaal veilige drempel.
-6. Markeer gatweken en identificeer de specifieke transacties die elk gat aandrijven.
-7. Bewaar het verplichtingsrecord voor wekelijkse rollende review en teamcommunicatie.
-
-Het werkboek is bedoeld als een beslissingsondersteunings- en planningsinstrument. Het vervangt geen boekhoudsoftware, auditeerbare financiële registraties of professioneel advies voor complexe financieringsbeslissingen.
+| Pijnpunt in treasury & kasbeheer | Veelgezocht zoekvereiste | Ingebouwde oplossing van het Excel-werkboek |
+| --- | --- | --- |
+| **Niet-gefactureerde PO's ontbreken in kasprognoses** | *Open inkooporders opnemen in kasstroomprognose in Excel* | **Uniform register van open verbintenissen:** Legt gefactureerde AR, gefactureerde AP, niet-gefactureerde verkooporders en openstaande inkooporders vast in één gestructureerde invoertabel. |
+| **Dubbel tellen van PO's na facturatie** | *Dubbele PO- en factuurregistraties in kasprojectie voorkomen* | **Geautomatiseerde ontdubbeling van PO naar factuur:** Identificeert en sluit inkooporders uit die al zijn omgezet in formele AP-facturen, zodat elke dollar precies één keer wordt geteld. |
+| **Roodstanden binnen de maand & onverwachte tekorten** | *Sjabloon voor wekelijkse doorlopende kasstroomprognose met waarschuwingen bij laag kassaldo* | **Configureerbare drempelwaarschuwingslaag:** Vergelijkt de geprojecteerde weekafsluitende kas met je eigen Minimale Veilige Kassaldo en markeert overtredingsweken in realtime. |
+| **Verouderde verzend- & leveringsschattingen** | *Dynamisch kasstroommodel op basis van verzenddatums en betaalvoorwaarden* | **Geautomatiseerde mapping van voorwaarde naar week:** Vertaalt operationele datums (geschatte verzenddatum, aankomstdatum, factuurdatum) en betaalvoorwaarden naar exacte wekelijkse kas-emmers. |
+| **Trage goedkeuringscontroles vóór toezegging** | *Kasimpact van een nieuwe leveranciersinkooporder testen vóór de aankoop* | **Liquiditeitssandbox vóór de beslissing:** Voer een voorgestelde PO of klantorder in en zie onmiddellijk of de nieuwe verbintenis 6–16 weken verderop een kastekort creëert. |
 
 ---
 
-## Aankoop
+## Casestudy: maandelijkse accrualblindheid vs. zicht op 16 weken doorlopende kas
 
-Gebruik hier het volledige Excel-werkboek:
+**Bedrijfsprofiel:** Importeur van consumentengoederen met een jaaromzet van $2M–$10M, actief met gemengde klantdepositovoorwaarden, overzeese leveranciersvooruitbetalingsschema's en een slank financiële team met één manager.
 
-[Koop het volledige Excel-werkboek →](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)
+**Waar het operationeel misging:** Elke week besteedde de financiële manager twee uur aan het kruisverwijzen van CRM-verkooporders, ontvangen klantdeposito's, open fabrieks-PO's en vrachtaankomstschema's over losse spreadsheets. Ondanks een positieve maandelijkse netto kasstroom op papier kreeg het bedrijf in één kwartaal twee noodgevallen van kastekort — beide ontdekt minder dan 48 uur voordat de internationale leveranciersoverboekingen vervielen.
+
+### Vergelijking: losse AR/AP-spreadsheets vs. geautomatiseerd 16-weeks verbintenissenmodel
+
+| Treasuryoperatie | Handmatige losse spreadsheets (voor) | Geautomatiseerd werkboek voor 16-weekse doorlopende kasstroom (na) |
+| --- | --- | --- |
+| **Data-architectuur van verbintenissen** | Gescheiden CRM-verkoopbladen, inkoop-PO-trackers en AR/AP-exporten uit de boekhouding | **Eén uniform verbintenissenregister** met AR, AP, open SO's en open PO's, inclusief ontdubbeling |
+| **Voorbereidingstijd van de wekelijkse prognose** | ~2 uur handmatige VLOOKUP's en datumkruisverwijzingen elke vrijdag | **Minder dan 5 minuten per week**; het doorlopende 16-weekse venster wordt dynamisch bijgewerkt zodra datums worden ingevoerd |
+| **Zicht op vooruitbetalingen vóór facturatie** | Blind voor leveranciersaanbetalingen en mijlpaalsaldi totdat leveranciersfacturen worden geboekt | **Volledige mijlpaalmapping** over aanbetalingstranches, betalingen vóór verzending en leveringsoverboekingen |
+| **Detectievenster van liquiditeitstekorten** | Ontdekt 24–48 uur vóór de vervaldatum van de overboeking (gedwongen noodkredietopnames) | **6–12 weken van tevoren gesignaleerd** via geautomatiseerde waarschuwingen bij het doorbreken van de minimale kasdrempel |
+
+### Het exacte kantelpunt dat dit werkboek blootlegt
+
+Denk aan een **klantenverkooporder van $100,000** en de gekoppelde **leveranciersinkooporder van $50,000**, startend vanaf een **openingskassaldo van $10,000**:
+
+* **Leveranciers-PO-saldo ($30,000 uitstroom):** 60% vervalt bij goederenontvangst in **week 5**.
+* **Klant-SO-saldo ($70,000 instroom):** 70% vervalt vóór magazijnverzending in **week 6**.
+
+| Rapportagegranulariteit | Nettokaspositie week 5 | Nettokaspositie week 6 | Operationele conclusie |
+| --- | --- | --- | --- |
+| **Traditioneel maandelijks kasoverzicht** | *Verborgen in het maandtotaal* | **+$50,000 kas op maandafsluiting** | Vals groen licht; de financiële afdeling keurt voorwaarden goed zonder de wanbetaling halverwege de maand te zien |
+| **16-weeks doorlopend weekmodel** | **−$20,000 kastekort** ($10K − $30K) | **+$50,000 herstel** (−$20K + $70K) | **Signaleert het week 5-tekort van $20,000 5 weken van tevoren**, zodat het team de leveranciersoverboekingsvoorwaarden kan afstemmen op de klantontvangst |
 
 ---
 
-## Beperkingen
+## Treasurynormen achter doorlopende kasprognoses volgens de directe methode
 
-- **Invoerafhankelijkheid** — de nauwkeurigheid van de prognose wordt begrensd door de kwaliteit van de ingevoerde data; verouderde verzendschattingen of ontbrekende verplichtingen produceren zonder waarschuwing een vals gevoel van zichtbaarheid
-- **Handmatige verversing vereist** — het model werkt niet automatisch bij; zonder consistente wekelijkse onderhoud degradeert het rollende venster en worden gaten weer onzichtbaar
-- **Geen systeem van record** — dit is een beslissingsondersteuningslaag; het vervangt geen boekhoudsoftware, geen ERP of auditeerbare financiële registraties
-- **Deterministisch, niet probabilistisch** — elke kasgebeurtenis wordt gemodelleerd als een vaste datum en een vast bedrag; betalingsvertragingsrisico, valutabewegingen en orderannuleringsscenario's vereisen een handmatige overlay
-- **Betrouwbaarheid buitenhorizon** — weken 10–16 hangen af van operationele schattingen die materieel kunnen verschuiven; het model is het meest betrouwbaar binnen de 6–8 weekse nabije horizon
-- **Multi-currency niet gemodelleerd** — bedrijven met significante valutablootstelling moeten wisselkoersaannames als handmatige overlay toepassen
-- **Schaalcontext** — ontworpen voor bedrijven die 5–50 gelijktijdige open posities beheren; daarbuiten vereist het handmatige invoermodel structurele aanpassing
+Treasuryteams van bedrijven vertrouwen op **kortetermijn-doorlopende kasstroomprognoses volgens de directe methode**, omdat accrual-resultatenrekeningen winstgevendheid meten in plaats van kasliquiditeit. Snel groeiende productbedrijven genereren vaak sterke boekhoudkundige marges terwijl ze door de timing van voorraadvooruitbetalingen zonder operationele kas komen te zitten.
+
+De directe methode omzeilt accrual-aanpassingen en wijst **100% van de verwachte bruto kasontvangsten en bruto kasuitgaven** toe aan specifieke wekelijkse emmers:
+
+| Traditionele rapportagemethode | Structurele beperking in de operatie | Hoe het 16-weekse directe-methode-model dit oplost |
+| --- | --- | --- |
+| **Indirecte kasschatting via P&L** | Vermengt boekhoudkundige nettowinst met liquide bankmiddelen; verbergt werkkapitaalpieken binnen de maand | Wijst **werkelijke gedateerde kasontvangsten en overboekingsuitgaven** week voor week toe |
+| **Dagelijkse controle van het banksaldo** | Puur achteruitkijkend; toont vereffende kas terwijl $100K+ aan toegezegde komende PO-overboekingen wordt genegeerd | Projecteert **vooruitlopende kassaldi** over de komende 16 opeenvolgende weken |
+| **Maandelijkse AR/AP-verouderingsrapportages** | Sluit niet-gefactureerde inkooporders en klantmijlpalen vóór verzending uit | Integreert **ordertoezeggingen vóór facturatie** naast gefactureerde debiteuren en crediteuren |
+
+**Geraadpleegde gezaghebbende treasury- & kasbeheerraamwerken:**
+
+* [AICPA: kasstroomprognoses volgens de directe methode & werkkapitaalbeheer](https://www.aicpa-cima.com)
+* [Association for Financial Professionals (AFP): normen voor kortetermijntreasury & doorlopende kasprognoses](https://www.afponline.org)
 
 ---
 
-## Over dit project
+## Hoe de doorlopende horizon van 16 weken & de datumoffsetmapping werken
 
-Dit werkboek maakt deel uit van een bredere inspanning om complexe operationele en financiële vereisten te vertalen naar lichtgewicht tools die kleine en middelgrote organisaties echt kunnen gebruiken.
+De prognosehorizon van 16 weken schuift week na week vooruit. Elke open order of factuur wordt aan een specifieke toekomstige kasweek toegewezen door de **operationele mijlpaaldatum** te combineren met de **contractuele betaalvoorwaarde**:
 
-Geen ERP. Geen treasurysoftware-abonnement. Geen maatwerkontwikkelingsproject.
+| Operationele mijlpaalinvoer | Contractuele betaalvoorwaarde | Afgeleide wekelijkse kasstroomgebeurtenis in het model |
+| --- | --- | --- |
+| **Geschatte verzenddatum van de klant** | *Saldo vervalt vóór verzending* | **Kasinstroom (ontvangst)** toegewezen aan de week onmiddellijk vóór de geschatte verzending |
+| **Geschatte aankomstdatum van de goederen (ETA)** | *Saldo vervalt bij levering / aankomst* | **Kasuitstroom (leveranciersoverboeking)** toegewezen aan de geschatte aankomstweek in het magazijn/de haven |
+| **Uitgiftedatum van de klantfactuur** | *Krediettermijn van Net 30 dagen* | **Kasinstroom (ontvangst)** toegewezen 4 weken vooruit vanaf de factuurdatum |
 
-Alleen heldere bedrijfslogica, gestructureerde data en herhaalbare beslissingsondersteuning — geleverd in software die je team al heeft.
+**Waarom de prognosenauwkeurigheid splitst tussen de nabije horizon (weken 1–8) en de buitenhorizon (weken 9–16):**
 
-Als jouw operatie kasbeheer, inkoopcycli of klantfactureringsstructuren omvat die nu in het hoofd van iemand of in een losgekoppeld spreadsheet leven, [bekijk wat er nog meer beschikbaar is →](https://www.theseusworkshop.com)
+* **Weken 1–8 (uitvoeringsvenster met hoge betrouwbaarheid):** Gedreven door bevestigde facturen, vastgelegde scheepvaartschema's en actieve inkooporders die al in productie zijn. Gebruikt voor strakke betalingsschema's, goedkeuringen van overboekingen en beslissingen over kredietlijnopnames.
+* **Weken 9–16 (venster voor strategische planning & inkoop):** Gedreven door geschatte productielevertijden en verkooporders in de pijplijn. Gebruikt om te stresstesten of nieuwe leveranciers-PO's kunnen worden gefinancierd uit de interne kasstroom voordat contracten worden getekend.
+
+---
+
+## Snelle start: hoe je in 7 stappen je 16-weekse doorlopende kasstroomprognose bouwt
+
+Volg deze stapsgewijze workflow om je financiële en operationele team van reactieve banksaldocontroles naar proactief 16-weeks liquiditeitsbeheer te brengen:
+
+1. **Test verbintenissscenario's in de interactieve browserdemo**
+Open de [interactieve websimulator voor de 16-weekse doorlopende kasstroom](https://hyvoid.github.io/rolling-cashflow-forecast/) om te ontdekken hoe open PO's, klantdeposito's en verzendvertragingen de wekelijkse kas saldi in realtime verschuiven.
+2. **Configureer het openingskassaldo en de minimale veilige cashbuffer**
+Voer je huidige operationele banksaldo in, definieer je startprognosedatum op maandag en stel de **Minimale Veilige Kasdrempel** van je bedrijf in (bijv. $25,000 of 1 maand vaste loonkosten/opex).
+3. **Leg gefactureerde debiteuren (AR) en crediteuren (AP) vast**
+Voer openstaande klantfacturen en leveranciersfacturen in met hun contractuele vervaldatums om je basis-kas-tijdlijn na facturatie vast te leggen.
+4. **Voer niet-gefactureerde verkooporders (SO) en openstaande inkooporders (PO) in**
+Registreer bevestigde klantorders en actieve leveranciers-PO's samen met aanbetingspercentages, saldospercentages, geschatte verzend-/aankomstdatums en betaalvoorwaarden.
+5. **Voer de geautomatiseerde ontdubbeling van PO naar factuur uit**
+Markeer of koppel inkooporders die al door leveranciers zijn gefactureerd, zodat de ontdubbelingsengine ze uit de open verbintenissen sluit en dubbeltelling voorkomt.
+6. **Bekijk wekelijkse drempeloverschrijdingswaarschuwingen en diagnoseer cash-dalen**
+Doorloop de 16-weekse kas-tijdlijn om elke week onder je minimale buffer te vinden, filter vervolgens de verbintenistabel op dat weeknummer om de exacte leveranciers-PO of de vertraagde klantincasso te identificeren die het gat veroorzaakt.
+7. **Standaardiseer je wekelijkse kasreview met het herbruikbare Excel-werkboek**
+Zodra je de logica in de webpreview van één sessie hebt getest, **[download je het volledige, herbruikbare Excel-sjabloon voor de 16-weekse doorlopende kasstroom](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)** om je lopende bedrijfsgegevens op te slaan, de tracking van tegenpartijen aan te passen en je wekelijkse liquiditeitsreview van 5 minuten offline in Microsoft Excel uit te voeren.
+
+*Disclaimer: dit werkboek is een model voor operationele kasplanning en beslissingsondersteuning. Het vult — in plaats van vervangt — formele GAAP/IFRS-boekhoudsoftware, gecontroleerde jaarrekeningen en gelicentieerd treasury- of financieringsadvies aan.*
+
+---
+
+## Download het volledige Excel-sjabloon
+
+Klaar om onverwachte tekorten op betaaldatums te elimineren en je AR, AP en open orderverbintenissen in één doorlopende tijdlijn te verenigen?
+
+👉 **[Download het volledige Excel-werkboek voor de 16-weekse doorlopende kasstroomprognose](https://www.theseusworkshop.com/l/16wcashflow?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=rolling-16-week-cashflow)**
+
+---
+
+## Technische reikwijdte & operationele beperkingen
+
+* **Afhankelijkheid van actuele data:** De prognosenauwkeurigheid hangt af van actuele operationele schattingen; niet-geregistreerde leveranciers-PO's of verouderde vrachtaankomstdatums onderschatten of verstoren de wekelijkse kasuitstromen.
+* **Wekkelijks doorlopend onderhoudsritme:** Ontworpen voor een wekelijkse verversing van 5 minuten (openingskas bijwerken, de startdatum vooruitschuiven en verschoven verzend-ETA's bijstellen).
+* **Beslissingsondersteuningslaag (geen boekhoudkundig grootboek):** Gebouwd voor vooruitkijkende liquiditeitsplanning; vervangt geen ERP-systemen, dubbele-boekhoudsoftware of wettelijke belastingregistraties.
+* **Deterministische datummapping:** Modelleert elke verbintenisstranche op een specifieke doeldatum en een specifiek bedrag; probabilistische kortingen voor late betalingen of stresstests voor orderannuleringen vereisen handmatige aanpassingen van datum/bedrag.
+* **Variantie in de buitenhorizon (weken 9–16):** Weken 1–8 weerspiegelen bijna vastgelegde verbintenissen, terwijl weken 9–16 operationele schattingen weerspiegelen die onderhevig zijn aan verschuivingen in levertijden van de toeleveringsketen.
+* **Architectuur met één basisvaluta:** Leveranciers-PO's in meerdere valuta's (bijv. USD vs. EUR/CNY) dienen te worden ingevoerd tegen je gebudgetteerde of termijnafgedekte wisselkoers in de basisvaluta.
+* **Aanbevolen operationele schaal:** Geoptimaliseerd voor mkb-bedrijven die **5 tot 50 gelijktijdige open orders/PO's** per doorlopende cyclus actief beheren in Microsoft Excel.
+
+---
+
+## Over Theseus Workshop
+
+Wij bouwen praktische, audit-klaar financiële en operationele Microsoft Excel-modellen voor groothandel-, productie- en operatorgedreven bedrijven die institutionele controle op treasury en boekhouding nodig hebben binnen standaard spreadsheets.
+
+Elk werkboek gebruikt transparante native Excel-formules zonder zwarte-doos-macro's, waardoor financiële en operationele teams volledig inzicht hebben in elke wekelijkse kasberekening.
+
+Los je complexe problemen op het gebied van werkkapitaal, voorraadinkoop of kapitaalallocatie op in spreadsheets? **[Ontdek onze volledige collectie financiële & operationele Excel-sjablonen bij Theseus Workshop →](https://www.theseusworkshop.com)**
 
 ---
 
 ## Licentie
 
-Gedistribueerd onder de [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+Gedistribueerd onder de [Apache License 2.0 open-sourcelicentie](https://www.apache.org/licenses/LICENSE-2.0).
+
